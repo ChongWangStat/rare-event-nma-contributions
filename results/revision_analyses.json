@@ -358,6 +358,8 @@
   "nll": 8378.417501321028
  },
  "tiospir": {
+  "d_from_registration": 0.7219139685173683,
+  "anticipated_enrollment": 16800,
   "network_est": 0.014115388606731217,
   "network_se": 0.005211971487687512,
   "network_interval": {

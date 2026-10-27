@@ -1,0 +1,4 @@
+arm,treatment_node,deaths,n_mortality_analysis,source
+tiotropium 5 ug Respimat,TIO-SMI,423,5711,ClinicalTrials.gov NCT01126437 results; Wise et al. (2013) NEJM 369:1491-1501
+tiotropium 18 ug HandiHaler,TIO-HH,439,5694,ClinicalTrials.gov NCT01126437 results; Wise et al. (2013)
+tiotropium 2.5 ug Respimat,(not in network),440,5730,ClinicalTrials.gov NCT01126437 results; Wise et al. (2013)

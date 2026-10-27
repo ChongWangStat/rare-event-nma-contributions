@@ -4,7 +4,7 @@
 # Each step's stdout is kept in results/<script>.log; numbers quoted in the text but not stored
 # in a results file are printed there.
 # Long Monte Carlo steps are marked LONG with approximate run times (2-core machine); the
-# total is roughly 1.5 hours, dominated by sup_convergence.py dong and run_simulations.py.
+# total is roughly two hours, dominated by sup_convergence.py dong and the simulations.
 # Every Monte Carlo step uses fixed seeds.  The stored results were produced with Python 3.13,
 # numpy 2.4.4, scipy 1.17.1, pandas 3.0.5 (requirements.txt).  With numpy 2.5.3 / scipy 1.18.1
 # a few Monte Carlo p-values move by a handful of draws; deterministic outputs agree to
@@ -77,6 +77,15 @@ $PY make_sim_mle_table.py            | tee "$R/make_sim_mle_table.log"   # sim_m
 $PY sim_cf_design.py 0.0 1000 400   | tee -a "$R/sim_cf_design.log"
 $PY sim_cf_design.py 0.05 1000 200  | tee -a "$R/sim_cf_design.log"
 $PY make_sim_table.py               | tee "$R/make_sim_table.log"      # sim_main.tex, sim_partA_supp.tex
+
+# --- Robustness: interval coverage, misspecification, NMOSD allocation ----------------------
+$PY nmosd_allocation.py             | tee "$R/nmosd_allocation.log"    # ~1 min; nmosd_allocation.json/.tex
+# ~2 min (4,000 data sets per design)
+$PY interval_coverage.py 4000       | tee "$R/interval_coverage.log"   # interval_coverage.csv/.tex
+# LONG: ~6-7 min each; the two truths are independent and can run in parallel
+$PY sim_misspec.py additive 2000    | tee "$R/sim_misspec_additive.log"  # sim_misspec_additive.csv
+$PY sim_misspec.py logit 2000       | tee "$R/sim_misspec_logit.log"     # sim_misspec_logit.csv
+$PY make_robustness_tables.py       | tee "$R/make_robustness_tables.log" # misspec.tex
 
 # --- Tables and macros read by the manuscript and supplement --------------------------------
 $PY make_text_macros.py             | tee "$R/make_text_macros.log"    # text_macros.tex

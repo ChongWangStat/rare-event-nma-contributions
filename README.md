@@ -44,6 +44,9 @@ res.attrs["estimate"], res.attrs["q"]             # risk difference Drug - Place
 | `run_simulations.py`, `make_tables.py` | Synthetic simulation, estimator | `sim_partA.csv`, `sim_partB.csv` |
 | `run_sim_mle.py`, `make_sim_mle_table.py` | Synthetic simulation, consistency tests with the constrained-MLE null | `sim_mle.csv/.tex` |
 | `sim_cf_design.py` | Design-based simulation on the cystic fibrosis network | `sim_cf_design.csv` |
+| `interval_coverage.py` | Coverage and width of the basic bootstrap, normal, MOVER-Wilson and Clopper–Pearson/LP intervals in six designs | `interval_coverage.csv/.tex` |
+| `sim_misspec.py`, `make_robustness_tables.py` | COPD design when the risk-difference model holds and when a common odds ratio holds instead: bias and coverage for the projected target, power of the diagnostics | `sim_misspec_*.csv`, `misspec.tex` |
+| `nmosd_allocation.py` | Allocation of 200 or 400 new NMOSD patients across candidate trials (convex program and exact one- and two-trial plans) | `nmosd_allocation.json/.tex` |
 | `make_sim_table.py` | Table 1 and Supplementary Table S(simA) | `sim_main.tex`, `sim_partA_supp.tex` |
 | `make_qinc_tables.py`, `make_text_macros.py`, `make_supp_tables.py` | LaTeX tables and macros for the manuscript and supplement | `qinc_networks.tex`, `qinc_macros.tex`, `text_macros.tex`, `supp_*.tex` |
 | `verify_math.py` | Numerical checks of every identity and closed form | `verify_math.json` |
@@ -65,6 +68,8 @@ Every arm-level file has the columns `study, treatment, events, n` (number with 
 | `cf_sae_registry_with_expand.csv` | The same plus the crossover trial EXPAND (sensitivity analysis only) | ClinicalTrials.gov |
 | `covid19_wholenetwork.csv` | COVID-19, death; 5 trials, treatments A–E (standard care, corticosteroids, lopinavir–ritonavir, hydroxychloroquine, remdesivir) | Wang et al., arXiv:2604.21994 |
 | `registry_history.csv` | First anticipated and last actual enrolment of 19 registered trials, registered allocation ratio | ClinicalTrials.gov record histories, read by hand (the history endpoint is not scriptable) |
+| `tiospir.csv` | TIOSPIR mortality, tiotropium 5 µg soft-mist vs HandiHaler (external check) | Wise et al. (2013), *N Engl J Med* 369:1491 |
+| `tiospir_registration.csv` | TIOSPIR enrolment and allocation anticipated at first registration | ClinicalTrials.gov record history, NCT01126437 |
 | `registry_primary_endpoints.csv` | Registered primary-endpoint analyses of the cystic fibrosis trials | ClinicalTrials.gov API v2 (`registry_primary.py`) |
 
 ClinicalTrials.gov pages were accessed between 25 and 27 October 2026.

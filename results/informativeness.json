@@ -3,9 +3,9 @@
   "targets": 10,
   "targets_all_nonsig": 6,
   "median_precision_gain_all_nonsig": 3.261320000919614,
-  "n_network_excludes_mid": 10,
+  "n_network_excludes_mid": 9,
   "n_best_trial_excludes_mid": 2,
-  "n_network_only": 8,
+  "n_network_only": 7,
   "mid": 0.01,
   "median_precision_gain": 3.340025889618645
  },

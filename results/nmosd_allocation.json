@@ -1,0 +1,237 @@
+{
+ "targets": [
+  "Eculizumab:Inebilizumab",
+  "Eculizumab:Rituximab",
+  "Eculizumab:Satralizumab",
+  "Eculizumab:Tocilizumab",
+  "Inebilizumab:Rituximab",
+  "Inebilizumab:Satralizumab",
+  "Inebilizumab:Tocilizumab",
+  "Rituximab:Satralizumab",
+  "Rituximab:Tocilizumab",
+  "Satralizumab:Tocilizumab"
+ ],
+ "r_before": [
+  0.05529753170527199,
+  0.13695642030608432,
+  0.05552091760085069,
+  0.06559156749609331,
+  0.12886742718866123,
+  0.047431924483427604,
+  0.05750257437867021,
+  0.12909081308423986,
+  0.13916146297948254,
+  0.057725960274248866
+ ],
+ "mean_before": 0.08731465994970307,
+ "max_before": 0.13916146297948254,
+ "plans": [
+  {
+   "budget": 200,
+   "plan": "unrestricted optimum (bound)",
+   "allocation": {
+    "Eculizumab vs Inebilizumab": 9,
+    "Eculizumab vs Rituximab": 36,
+    "Eculizumab vs Satralizumab": 9,
+    "Eculizumab vs Tocilizumab": 20,
+    "Inebilizumab vs Rituximab": 33,
+    "Inebilizumab vs Tocilizumab": 11,
+    "Rituximab vs Satralizumab": 33,
+    "Rituximab vs Tocilizumab": 37,
+    "Satralizumab vs Tocilizumab": 11
+   },
+   "mean_r": 0.03648263450081978,
+   "max_r": 0.0365354815480009,
+   "mean_reduction": 0.5821705711064405,
+   "max_reduction": 0.7374597768249421,
+   "worst_target": "Rituximab:Tocilizumab"
+  },
+  {
+   "budget": 200,
+   "plan": "best single trial",
+   "allocation": {
+    "Control vs Rituximab": 200
+   },
+   "mean_r": 0.0519320858674386,
+   "max_r": 0.06559156749609332,
+   "mean_reduction": 0.40523062338725624,
+   "max_reduction": 0.5286657233133292,
+   "worst_target": "Eculizumab:Tocilizumab"
+  },
+  {
+   "budget": 200,
+   "plan": "best single head-to-head trial",
+   "allocation": {
+    "Rituximab vs Tocilizumab": 200
+   },
+   "mean_r": 0.0520962130832099,
+   "max_r": 0.06733949041269266,
+   "mean_reduction": 0.4033509022056603,
+   "max_reduction": 0.5161053285087915,
+   "worst_target": "Eculizumab:Rituximab"
+  },
+  {
+   "budget": 200,
+   "plan": "best two trials",
+   "allocation": {
+    "Eculizumab vs Rituximab": 100,
+    "Rituximab vs Tocilizumab": 100
+   },
+   "mean_r": 0.042623274147010316,
+   "max_r": 0.050868990592783506,
+   "mean_reduction": 0.5118428661170631,
+   "max_reduction": 0.634460650932626,
+   "worst_target": "Rituximab:Satralizumab"
+  },
+  {
+   "budget": 200,
+   "plan": "best two head-to-head trials",
+   "allocation": {
+    "Eculizumab vs Rituximab": 100,
+    "Rituximab vs Tocilizumab": 100
+   },
+   "mean_r": 0.042623274147010316,
+   "max_r": 0.050868990592783506,
+   "mean_reduction": 0.5118428661170631,
+   "max_reduction": 0.634460650932626,
+   "worst_target": "Rituximab:Satralizumab"
+  },
+  {
+   "budget": 200,
+   "plan": "eculizumab vs inebilizumab only",
+   "allocation": {
+    "Eculizumab vs Inebilizumab": 200
+   },
+   "mean_r": 0.07703186571877695,
+   "max_r": 0.13916146297948256,
+   "mean_reduction": 0.11776709932615492,
+   "max_reduction": -2.220446049250313e-16,
+   "worst_target": "Rituximab:Tocilizumab"
+  },
+  {
+   "budget": 200,
+   "plan": "equal split over the 10 head-to-head comparisons",
+   "allocation": {
+    "Eculizumab vs Inebilizumab": 20,
+    "Eculizumab vs Rituximab": 20,
+    "Eculizumab vs Satralizumab": 20,
+    "Eculizumab vs Tocilizumab": 20,
+    "Inebilizumab vs Rituximab": 20,
+    "Inebilizumab vs Satralizumab": 20,
+    "Inebilizumab vs Tocilizumab": 20,
+    "Rituximab vs Satralizumab": 20,
+    "Rituximab vs Tocilizumab": 20,
+    "Satralizumab vs Tocilizumab": 20
+   },
+   "mean_r": 0.03856231640316319,
+   "max_r": 0.04840957409405722,
+   "mean_reduction": 0.5583523267985386,
+   "max_reduction": 0.6521337656446271,
+   "worst_target": "Rituximab:Tocilizumab"
+  },
+  {
+   "budget": 400,
+   "plan": "unrestricted optimum (bound)",
+   "allocation": {
+    "Eculizumab vs Inebilizumab": 29,
+    "Eculizumab vs Rituximab": 56,
+    "Eculizumab vs Satralizumab": 30,
+    "Eculizumab vs Tocilizumab": 40,
+    "Inebilizumab vs Rituximab": 53,
+    "Inebilizumab vs Satralizumab": 18,
+    "Inebilizumab vs Tocilizumab": 32,
+    "Rituximab vs Satralizumab": 54,
+    "Rituximab vs Tocilizumab": 57,
+    "Satralizumab vs Tocilizumab": 32
+   },
+   "mean_r": 0.025055049800432837,
+   "max_r": 0.025068179113014195,
+   "mean_reduction": 0.7130487616298844,
+   "max_reduction": 0.8198626359891735,
+   "worst_target": "Inebilizumab:Satralizumab"
+  },
+  {
+   "budget": 400,
+   "plan": "best single trial",
+   "allocation": {
+    "Control vs Rituximab": 400
+   },
+   "mean_r": 0.04886236482833802,
+   "max_r": 0.06559156749609327,
+   "mean_reduction": 0.44038761811035165,
+   "max_reduction": 0.5286657233133296,
+   "worst_target": "Eculizumab:Tocilizumab"
+  },
+  {
+   "budget": 400,
+   "plan": "best single head-to-head trial",
+   "allocation": {
+    "Rituximab vs Tocilizumab": 400
+   },
+   "mean_r": 0.0497351175185105,
+   "max_r": 0.06267227084385756,
+   "mean_reduction": 0.4303921294870755,
+   "max_reduction": 0.5496434896412541,
+   "worst_target": "Eculizumab:Rituximab"
+  },
+  {
+   "budget": 400,
+   "plan": "best two trials",
+   "allocation": {
+    "Eculizumab vs Rituximab": 200,
+    "Rituximab vs Tocilizumab": 200
+   },
+   "mean_r": 0.036990604635511404,
+   "max_r": 0.047431924483427576,
+   "mean_reduction": 0.576352875258066,
+   "max_reduction": 0.6591590554748568,
+   "worst_target": "Inebilizumab:Satralizumab"
+  },
+  {
+   "budget": 400,
+   "plan": "best two head-to-head trials",
+   "allocation": {
+    "Eculizumab vs Rituximab": 200,
+    "Rituximab vs Tocilizumab": 200
+   },
+   "mean_r": 0.036990604635511404,
+   "max_r": 0.047431924483427576,
+   "mean_reduction": 0.576352875258066,
+   "max_reduction": 0.6591590554748568,
+   "worst_target": "Inebilizumab:Satralizumab"
+  },
+  {
+   "budget": 400,
+   "plan": "eculizumab vs inebilizumab only",
+   "allocation": {
+    "Eculizumab vs Inebilizumab": 400
+   },
+   "mean_r": 0.07545710569915808,
+   "max_r": 0.13916146297948265,
+   "mean_reduction": 0.1358025588987628,
+   "max_reduction": -8.881784197001252e-16,
+   "worst_target": "Rituximab:Tocilizumab"
+  },
+  {
+   "budget": 400,
+   "plan": "equal split over the 10 head-to-head comparisons",
+   "allocation": {
+    "Eculizumab vs Inebilizumab": 40,
+    "Eculizumab vs Rituximab": 40,
+    "Eculizumab vs Satralizumab": 40,
+    "Eculizumab vs Tocilizumab": 40,
+    "Inebilizumab vs Rituximab": 40,
+    "Inebilizumab vs Satralizumab": 40,
+    "Inebilizumab vs Tocilizumab": 40,
+    "Rituximab vs Satralizumab": 40,
+    "Rituximab vs Tocilizumab": 40,
+    "Satralizumab vs Tocilizumab": 40
+   },
+   "mean_r": 0.02566514243605148,
+   "max_r": 0.02987307639094662,
+   "mean_reduction": 0.7060614740888221,
+   "max_reduction": 0.7853351369599284,
+   "worst_target": "Rituximab:Tocilizumab"
+  }
+ ]
+}

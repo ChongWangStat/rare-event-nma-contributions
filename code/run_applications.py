@@ -7,6 +7,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from scipy.stats import chi2
+from rdcsp import mover_interval
 from rdcsp import (Network, q_decomposition, pearson_weights, binomial_calibration, null_expectation_Q,
                    berger_boos_envelope, binomial_interval, study_significance,
                    throughput_table, add_planned_trial, iv_rd_estimate, verify_identities)
@@ -41,7 +42,9 @@ for t in dong.trts:
     ci = binomial_interval(dong, "Placebo", t, B=20000, seed=11)
     iv, ivse = iv_rd_estimate(dong, "Placebo", t)
     rows.append(dict(target=f"Placebo:{t}", estimate=res.attrs["estimate"], exact_se=ci["exact_se"],
-                     pct_lo=ci["basic"][0], pct_hi=ci["basic"][1],   # basic (reflected) bootstrap interval
+                     pct_lo=float(mover_interval(dong.coefficient_vector("Placebo", t), dong.r, dong.n)[0]),   # MOVER-Wilson 95% interval
+                     pct_hi=float(mover_interval(dong.coefficient_vector("Placebo", t), dong.r, dong.n)[1]),
+                     basic_lo=ci["basic"][0], basic_hi=ci["basic"][1],
                      direct_mass=1 - res.attrs["q"], indirect_mass=res.attrs["q"],
                      n_direct_studies=int((res["d"] > 0).sum()),
                      iv_cc_estimate=iv, iv_cc_se=ivse))
@@ -181,7 +184,8 @@ ci_g = binomial_interval(gur, "Control/Placebo", "Aprotinin", B=20000, seed=12)
 cal_g = binomial_calibration(gur, B=4000, seed=7)
 ex_g = null_expectation_Q(gur, cal_g["p_null"])
 summary["gur"]["control_aprotinin"] = dict(estimate=res_g.attrs["estimate"], q=res_g.attrs["q"],
-                                           exact_se=ci_g["exact_se"], percentile=ci_g["percentile"], basic=ci_g["basic"], normal=ci_g["normal"])
+                                           exact_se=ci_g["exact_se"], percentile=ci_g["percentile"], basic=ci_g["basic"], normal=ci_g["normal"],
+                                           mover=list(mover_interval(gur.coefficient_vector("Control/Placebo", "Aprotinin"), gur.r, gur.n)))
 summary["gur"]["Q"] = dict(Q_net=cal_g["Q_net"], Q_inc=cal_g["Q_inc"], Q_het=cal_g["Q_het"],
                            df_net=int(cal_g["df_net"]), df_inc=int(cal_g["df_inc"]), df_het=int(cal_g["df_het"]),
                            chi2_p_inc=float(1 - chi2.cdf(cal_g["Q_inc"], cal_g["df_inc"])), binom_p_inc=cal_g["p_inc"],

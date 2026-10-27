@@ -1,13 +1,13 @@
 """Do non-significant trials contribute meaningfully?  For every target with direct evidence: the share of
 direct weight supplied by trials whose own comparison was not significant; the design-based precision gain
 of the network over the best single trial, r_single / r_ab with r_single = 1/n_a + 1/n_b (the ratio of
-minimax worst-case variances, which needs no outcomes); and, with the same Wald construction and exact
-plug-in variance for both, whether the network and the best single trial have 95% half-widths below a
+minimax worst-case variances, which needs no outcomes); and, with the MOVER-Wilson construction for
+both, whether the network and the best single trial have 95% half-widths below a
 minimally important absolute difference (MID)."""
 import numpy as np, pandas as pd, json
 import matplotlib; matplotlib.use("Agg"); import matplotlib.pyplot as plt
 from itertools import combinations
-from rdcsp import Network, study_significance
+from rdcsp import Network, study_significance, mover_interval
 OUT="../results"; Z=1.959963984540054
 nets={"COPD":("dong2013_copd_mortality.csv",None,0.01),"Cystic fibrosis":("cf_sae_registry.csv",None,0.05),"NMOSD":("nmosd2025_relapse.csv",["CHAMPION"],0.10)}
 rows=[]
@@ -18,8 +18,8 @@ for name,(f,drop,mid) in nets.items():
     for a,b in combinations(net.trts,2):
         res=net.contributions(a,b); direct=res[res.d>0]
         if len(direct)==0: continue
-        c=net.coefficient_vector(a,b); se=np.sqrt((c**2*net.phat*(1-net.phat)/np.maximum(net.n-1,1)).sum())
-        est=res.attrs["estimate"]; hw=Z*se
+        c=net.coefficient_vector(a,b)
+        est=res.attrs["estimate"]; lo_n,hi_n=mover_interval(c,net.r,net.n); hw=(hi_n-lo_n)/2   # MOVER-Wilson half-width
         w_nonsig=0.0; n_sig=0; best=None
         e=net.e(a,b); r_ab=float(e@net.Lp@e)
         for _,r in direct.iterrows():
@@ -30,11 +30,10 @@ for name,(f,drop,mid) in nets.items():
             if best is None or r1<best[0]: best=(r1,s)
         # design-based precision gain: ratio of minimax worst-case variances (Theorem 2), outcome-free
         gain=best[0]/r_ab
-        # same interval construction for the network and the design-best trial: Wald with the exact
-        # (unbiased plug-in) variance; reported only where the best trial has events in both arms
+        # same interval construction for the network and the design-best trial: MOVER-Wilson (for a single
+        # trial this is Newcombe's hybrid score interval), defined at zero counts
         s=best[1]
-        v1=(s.r_a/s.n_a)*(1-s.r_a/s.n_a)/max(s.n_a-1,1)+(s.r_b/s.n_b)*(1-s.r_b/s.n_b)/max(s.n_b-1,1)
-        hw1=Z*np.sqrt(v1) if (0<s.r_a<s.n_a and 0<s.r_b<s.n_b) else np.nan
+        l1,u1=mover_interval(np.array([-1.0,1.0]),np.array([s.r_a,s.r_b]),np.array([s.n_a,s.n_b])); hw1=(u1-l1)/2
         network_within_mid = hw < mid                       # resolving: half-width smaller than an important difference
         rows.append(dict(network=name,target=f"{a}:{b}",estimate=est,halfwidth=hw,n_direct=len(direct),n_direct_sig=int(n_sig),
                          weight_share_nonsig=w_nonsig/direct.d.sum(),direct_mass=direct.d.sum(),best_trial=s.study,

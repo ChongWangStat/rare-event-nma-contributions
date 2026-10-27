@@ -188,7 +188,12 @@ df2 = pd.concat([dong.df, pd.DataFrame([dict(study="TIOSPIR", treatment=t, event
                 ignore_index=True)
 net2 = Network(df2)
 r2 = net2.contributions(x, y)
-R["tiospir"] = dict(network_est=est, network_se=float(se), network_interval=[float(v) for v in ci] if np.ndim(ci) else ci,
+reg_t = pd.read_csv(os.path.join(DATA, "tiospir_registration.csv")).iloc[0]
+n_planned = reg_t.anticipated_enrollment / 3.0            # 1:1:1 over three active arms
+g_planned = n_planned * n_planned / (2 * n_planned)
+d_registered = g_planned / (g_planned + G)
+R["tiospir"] = dict(d_from_registration=float(d_registered), anticipated_enrollment=int(reg_t.anticipated_enrollment),
+                    network_est=est, network_se=float(se), network_interval=[float(v) for v in ci] if np.ndim(ci) else ci,
                     direct_mass_before=float(dong.contributions(x, y).d.sum()),
                     tiospir_rd=423 / 5711 - 439 / 5694, d_predicted=float(d_pred),
                     d_realized=float(r2.loc[r2.study == "TIOSPIR", "d"].iloc[0]),

@@ -876,3 +876,33 @@ def route_table(net: Network, a: str, b: str):
         L = max(0.0, sum(flow[e] for e in path) - sum(ident["throughput"][v] for v in internal))
         rows.append(dict(weight=w, studies="/".join(str(e[2]) for e in path), path="\u2192".join([path[0][0]] + [e[1] for e in path]), lower=L, upper=U))
     return direct, rows, residual, ident
+
+
+# --------------------------------------------------------------------------- #
+# MOVER-Wilson interval for a fixed linear combination of independent proportions
+# --------------------------------------------------------------------------- #
+def wilson_interval(r, n, level: float = 0.95):
+    """Wilson score interval for each binomial proportion r/n (vectorized)."""
+    from scipy.stats import norm
+    z = norm.ppf(0.5 + level / 2)
+    r, n = np.asarray(r, float), np.asarray(n, float)
+    p = r / n
+    den = 1 + z ** 2 / n
+    centre = (p + z ** 2 / (2 * n)) / den
+    half = z * np.sqrt(p * (1 - p) / n + z ** 2 / (4 * n ** 2)) / den
+    return centre - half, centre + half
+
+
+def mover_interval(c, r, n, level: float = 0.95):
+    """MOVER (method of variance estimates recovery; Zou and Donner 2008) interval for theta = sum_i c_i p_i
+    from independent binomial arms, built from the Wilson interval of each arm.  It generalizes Newcombe's
+    hybrid score interval for a risk difference to the fixed coefficients of the network estimator, is
+    defined at zero counts, and stays inside the range of the coefficients' feasible values."""
+    c, r, n = np.asarray(c, float), np.asarray(r, float), np.asarray(n, float)
+    p = r / n
+    lo, hi = wilson_interval(r, n, level)
+    pos, neg = c > 0, c < 0
+    th = float(c @ p)
+    dl = np.sqrt(np.sum((c[pos] * (p[pos] - lo[pos])) ** 2) + np.sum((c[neg] * (hi[neg] - p[neg])) ** 2))
+    du = np.sqrt(np.sum((c[pos] * (hi[pos] - p[pos])) ** 2) + np.sum((c[neg] * (p[neg] - lo[neg])) ** 2))
+    return th - dl, th + du
