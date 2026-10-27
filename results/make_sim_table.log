@@ -1,0 +1,23 @@
+\begin{tabular}{llrrrrrr}
+\toprule
+\multicolumn{8}{l}{\emph{A. Estimator}} \\
+Setting & Target & Bias & Exact SD & Empirical SD & Cov.\ basic & Cov.\ normal & IV+cc bias / cov. \\
+\midrule
+Synthetic, risks 1--4\% & A:D & -0.0001 & 0.0135 & 0.0140 & 0.946 & 0.942 & -0.0007 / 0.951 \\
+Synthetic, risks 1--4\% & B:D & -0.0000 & 0.0169 & 0.0172 & 0.947 & 0.948 & -0.0018 / 0.959 \\
+Synthetic, risks 0.2--1.2\% & A:D & -0.0000 & 0.0082 & 0.0080 & 0.956 & 0.947 & -0.0022 / 0.994 \\
+Synthetic, risks 0.2--1.2\% & B:D & -0.0001 & 0.0094 & 0.0092 & 0.961 & 0.953 & -0.0029 / 0.996 \\
+Cystic fibrosis design & TEZ/IVA:Triple & +0.0021 & 0.0349 & 0.0344 & 0.955 & 0.955 & -- \\
+Cystic fibrosis design & Placebo:Triple & +0.0006 & 0.0318 & 0.0306 & 0.958 & 0.960 & -- \\
+\midrule
+\multicolumn{8}{l}{\emph{B. Consistency tests: rejection rate at level 0.05}} \\
+Setting & $\delta$ & $Q_{\mathrm{inc}}$ plug-in & $T_W$ $\chi^2$ & $T_W$ plug-in & $T_W$ BB sup & (data sets) & \\
+\midrule
+Synthetic, risks 1--4\% & 0.00 & 0.040 & 0.031 & 0.050 & 0.028 & (400) & \\
+Synthetic, risks 0.2--1.2\% & 0.00 & 0.026 & 0.010 & 0.069 & 0.010 & (400) & \\
+Synthetic, risks 1--4\% & 0.06 & 0.246 & 0.153 & 0.207 & 0.190 & (200) & \\
+Synthetic, risks 0.2--1.2\% & 0.06 & 0.440 & 0.116 & 0.405 & 0.125 & (200) & \\
+Cystic fibrosis design & 0.00 & 0.052 & 0.042 & 0.053 & 0.020 & (400) & \\
+Cystic fibrosis design & 0.05 & 0.116 & 0.096 & 0.107 & 0.120 & (200) & \\
+\bottomrule
+\end{tabular}

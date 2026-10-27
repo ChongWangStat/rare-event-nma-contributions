@@ -1,0 +1,270 @@
+{
+ "dong": {
+  "studies": 41,
+  "treatments": [
+   "ICS",
+   "LABA",
+   "LABA-ICS",
+   "Placebo",
+   "TIO-HH",
+   "TIO-SMI"
+  ],
+  "arms": 99,
+  "total_events": 2408,
+  "total_n": 52462,
+  "multi_arm": 10,
+  "zero_event_studies": 3,
+  "zero_arms": 20,
+  "event_rate": 0.04589988944378789,
+  "identities": {
+   "contributions_sum_minus_estimate": 0.0,
+   "estimate_minus_wls": -6.505213034913027e-17,
+   "direct_plus_indirect_minus_total": 1.3010426069826053e-18,
+   "weights_sum_direct_plus_q": 0.0,
+   "Q_additivity": 3.3306690738754696e-16,
+   "study_current_conservation": 1.3877787807814457e-17,
+   "laplacian_rowsum": 1.1368683772161603e-13
+  },
+  "placebo_tiohh": {
+   "estimate": -0.005354448660136085,
+   "q": 0.2922140574677522,
+   "top_study": "3",
+   "top_d": 0.34602234246121844
+  },
+  "signif_crosstab": {
+   "studies": {
+    "false": 49,
+    "true": 1
+   },
+   "total_direct_weight": {
+    "false": 3.441244991598897,
+    "true": 0.22106826155367243
+   },
+   "median_direct_weight": {
+    "false": 0.035868309186942435,
+    "true": 0.22106826155367243
+   },
+   "max_direct_weight": {
+    "false": 0.694580398226567,
+    "true": 0.22106826155367243
+   }
+  },
+  "largest_nonsig_direct": [
+   {
+    "study": "1",
+    "other": "TIO-SMI",
+    "r_a": 38,
+    "n_a": 2002,
+    "r_b": 52,
+    "n_b": 1989,
+    "fisher_p": 0.13621294131174216,
+    "direct_weight": 0.694580398226567
+   },
+   {
+    "study": "3",
+    "other": "TIO-HH",
+    "r_a": 411,
+    "n_a": 3006,
+    "r_b": 381,
+    "n_b": 2986,
+    "fisher_p": 0.30320910289652797,
+    "direct_weight": 0.34602234246121844
+   },
+   {
+    "study": "2",
+    "other": "TIO-SMI",
+    "r_a": 9,
+    "n_a": 653,
+    "r_b": 35,
+    "n_b": 1337,
+    "fisher_p": 0.10309505619624248,
+    "direct_weight": 0.30541960177343264
+   }
+  ],
+  "signif_studies": [
+   {
+    "study": "36",
+    "other": "LABA-ICS",
+    "r_a": 193,
+    "n_a": 1546,
+    "r_b": 231,
+    "n_b": 1544,
+    "fisher_p": 0.04700999259079447,
+    "direct_weight": 0.22106826155367243
+   }
+  ],
+  "throughput_corr_with_n": 0.8688092026473059,
+  "largest_studies_throughput": {
+   "12": {
+    "total_n": 7376.0,
+    "max_throughput": 0.5121
+   },
+   "36": {
+    "total_n": 6184.0,
+    "max_throughput": 0.3883
+   },
+   "3": {
+    "total_n": 5992.0,
+    "max_throughput": 0.346
+   },
+   "1": {
+    "total_n": 3991.0,
+    "max_throughput": 0.6946
+   },
+   "2": {
+    "total_n": 1990.0,
+    "max_throughput": 0.3054
+   },
+   "32": {
+    "total_n": 1964.0,
+    "max_throughput": 0.1212
+   },
+   "10": {
+    "total_n": 1829.0,
+    "max_throughput": 0.1056
+   },
+   "35": {
+    "total_n": 1704.0,
+    "max_throughput": 0.1145
+   },
+   "38": {
+    "total_n": 1465.0,
+    "max_throughput": 0.0921
+   },
+   "14": {
+    "total_n": 1323.0,
+    "max_throughput": 0.1338
+   }
+  },
+  "Q": {
+   "Q_net": 1.5806109270669533,
+   "Q_inc": 0.3617041934561672,
+   "Q_het": 1.2189067336107857,
+   "df_net": 53,
+   "df_inc": 10,
+   "df_het": 43,
+   "chi2_p_net": 1.0,
+   "chi2_p_inc": 0.9999986128408759,
+   "chi2_p_het": 1.0,
+   "binom_p_net": 0.13045,
+   "binom_p_inc": 0.1623,
+   "binom_p_het": 0.16335,
+   "binom_mean_net": 1.202558424520538,
+   "binom_mean_inc": 0.2440699633206766,
+   "binom_mean_het": 0.9584884611998612,
+   "envelope_p_net": 0.186,
+   "envelope_p_inc": 0.203,
+   "envelope_p_het": 0.243,
+   "E0_net": 1.1994888625129512,
+   "E0_inc": 0.24454575548215407,
+   "E0_het": 0.9549431070307971,
+   "null_fit_min": 0.001152073732718894,
+   "null_fit_floored": 12,
+   "null_fit_negative": 6,
+   "pearson": {
+    "Q_net": 64.56647532267641,
+    "Q_inc": 14.418955472067886,
+    "binom_mean_net": 206.6166113651142,
+    "binom_median_net": 62.98251555782093,
+    "binom_p99_net": 4904.430738145659,
+    "chi2_p_net": 0.13253905110668018,
+    "binom_p_net": 0.45975,
+    "chi2_p_inc": 0.1547249585305973,
+    "binom_p_inc": 0.356
+   }
+  },
+  "design_stage": [
+   {
+    "n_per_arm": 200,
+    "direct_weight_TIOSMI": 0.06508452544994094,
+    "throughput_TIOHH": 7.806255641895632e-18
+   },
+   {
+    "n_per_arm": 500,
+    "direct_weight_TIOSMI": 0.1482391969454408,
+    "throughput_TIOHH": 1.734723475976807e-17
+   },
+   {
+    "n_per_arm": 1000,
+    "direct_weight_TIOSMI": 0.2582026416443341,
+    "throughput_TIOHH": 2.0816681711721685e-17
+   },
+   {
+    "n_per_arm": 2000,
+    "direct_weight_TIOSMI": 0.4104309323447159,
+    "throughput_TIOHH": 8.326672684688674e-17
+   }
+  ],
+  "time_s": 59.736103534698486
+ },
+ "gur": {
+  "studies": 14,
+  "treatments": [
+   "Antithrombin III",
+   "Aprotinin",
+   "Control/Placebo",
+   "EACA",
+   "Solvent detergent plasma",
+   "Tranexamic acid",
+   "rFVIIa"
+  ],
+  "arms": 29,
+  "total_events": 45,
+  "total_n": 1002,
+  "multi_arm": 1,
+  "zero_arms": 11,
+  "zero_event_studies": 3,
+  "median_n_per_arm": 25.0,
+  "control_aprotinin": {
+   "estimate": -0.04642750027119056,
+   "q": 0.20607029675887034,
+   "exact_se": 0.022704122591970487,
+   "percentile": [
+    -0.09226571840287519,
+    -0.002916360387772225
+   ],
+   "basic": [
+    -0.0899386401546089,
+    -0.0005892821395059311
+   ],
+   "normal": [
+    -0.0909267628520349,
+    -0.001928237690346224
+   ]
+  },
+  "Q": {
+   "Q_net": 0.31379768888793214,
+   "Q_inc": 0.08172041056750598,
+   "Q_het": 0.23207727832042635,
+   "df_net": 9,
+   "df_inc": 2,
+   "df_het": 7,
+   "chi2_p_inc": 0.9599633183678631,
+   "binom_p_inc": 0.5015,
+   "chi2_p_het": 0.9999581821818658,
+   "binom_p_het": 0.637,
+   "binom_mean_inc": 0.12151421173666535,
+   "binom_mean_het": 0.3239326982632159,
+   "E0_inc": 0.1198174093079547,
+   "E0_het": 0.3252531440746357,
+   "null_fit_min": 0.01391320962417171
+  },
+  "zero_event_studies_detail": [
+   {
+    "study": "Pugliese 2007",
+    "arms": "Control/Placebo/rFVIIa",
+    "n": 20,
+    "W": 2.42861286636753e-17,
+    "d": 0.0
+   },
+   {
+    "study": "Himmelreich 1992",
+    "arms": "Control/Placebo/Aprotinin",
+    "n": 23,
+    "W": 0.061864473527088265,
+    "d": 0.061864473527088265
+   },
+   {
+    "study": "Williamson 1999",
+    "arms": "Control/Placebo/Solvent detergent plasma",
+

@@ -1,0 +1,22 @@
+{
+ "partA_meta": {
+  "low": {
+   "event_rate_range": [
+    0.01,
+    0.04
+   ],
+   "mean_total_n": 2094,
+   "arms": 21
+  },
+  "verylow": {
+   "event_rate_range": [
+    0.002,
+    0.012
+   ],
+   "mean_total_n": 2094,
+   "arms": 21
+  }
+ },
+ "time_A": 436.10109090805054,
+ "time_B": 397.58849596977234
+}

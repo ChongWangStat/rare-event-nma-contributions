@@ -1,0 +1,128 @@
+{
+ "Control:Eculizumab": {
+  "est": -0.3943,
+  "se": 0.0743,
+  "pct": [
+   -0.5428,
+   -0.2558
+  ],
+  "direct_mass": 1.0,
+  "rows": [
+   {
+    "study": "PREVENT",
+    "d": 1.0,
+    "W": 1.0,
+    "C": -0.3943
+   }
+  ]
+ },
+ "Control:Inebilizumab": {
+  "est": -0.2722,
+  "se": 0.0698,
+  "pct": [
+   -0.408,
+   -0.1363
+  ],
+  "direct_mass": 1.0,
+  "rows": [
+   {
+    "study": "N-MOmentum",
+    "d": 1.0,
+    "W": 1.0,
+    "C": -0.2722
+   }
+  ]
+ },
+ "Control:Satralizumab": {
+  "est": -0.2157,
+  "se": 0.0722,
+  "pct": [
+   -0.355,
+   -0.0744
+  ],
+  "direct_mass": 1.0,
+  "rows": [
+   {
+    "study": "SAkuraStar",
+    "d": 0.5056,
+    "W": 0.5056,
+    "C": -0.1003
+   },
+   {
+    "study": "SAkuraSky",
+    "d": 0.4944,
+    "W": 0.4944,
+    "C": -0.1154
+   }
+  ]
+ },
+ "Control:Rituximab": {
+  "est": -0.3684,
+  "se": 0.1107,
+  "pct": [
+   -0.5789,
+   -0.1579
+  ],
+  "direct_mass": 1.0,
+  "rows": [
+   {
+    "study": "RIN-1",
+    "d": 1.0,
+    "W": 1.0,
+    "C": -0.3684
+   }
+  ]
+ },
+ "Eculizumab:Inebilizumab": {
+  "est": 0.1221,
+  "se": 0.1019,
+  "pct": [
+   -0.0706,
+   0.3203
+  ],
+  "direct_mass": 0.0,
+  "rows": [
+   {
+    "study": "N-MOmentum",
+    "d": 0.0,
+    "W": 1.0,
+    "C": -0.2722
+   },
+   {
+    "study": "PREVENT",
+    "d": 0.0,
+    "W": 1.0,
+    "C": 0.3943
+   }
+  ]
+ },
+ "Satralizumab:Eculizumab": {
+  "est": -0.1785,
+  "se": 0.1036,
+  "pct": [
+   -0.3811,
+   0.022
+  ],
+  "direct_mass": 0.0,
+  "rows": [
+   {
+    "study": "PREVENT",
+    "d": 0.0,
+    "W": 1.0,
+    "C": -0.3943
+   },
+   {
+    "study": "SAkuraStar",
+    "d": 0.0,
+    "W": 0.5056,
+    "C": 0.1003
+   },
+   {
+    "study": "SAkuraSky",
+    "d": 0.0,
+    "W": 0.4944,
+    "C": 0.1154
+   }
+  ]
+ }
+}

@@ -1,0 +1,17 @@
+study,treatment,events,n,source
+STRIVE,Placebo,33,78,NCT00909532 adverse events module
+STRIVE,Ivacaftor,20,83,NCT00909532 adverse events module
+ENVISION,Placebo,6,26,NCT00909727 adverse events module
+ENVISION,Ivacaftor,5,26,NCT00909727 adverse events module
+TRAFFIC,Placebo,49,184,NCT01807923 adverse events module
+TRAFFIC,LUM/IVA qd,33,183,NCT01807923 adverse events module
+TRAFFIC,LUM/IVA bid,33,182,NCT01807923 adverse events module
+TRANSPORT,Placebo,57,186,NCT01807949 adverse events module
+TRANSPORT,LUM/IVA qd,51,186,NCT01807949 adverse events module
+TRANSPORT,LUM/IVA bid,31,187,NCT01807949 adverse events module
+EVOLVE,Placebo,47,258,NCT02347657 adverse events module
+EVOLVE,TEZ/IVA,31,251,NCT02347657 adverse events module
+VX17-445-102,Placebo,42,201,NCT03525444 adverse events module
+VX17-445-102,Triple,28,202,NCT03525444 adverse events module
+VX17-445-103,TEZ/IVA,1,52,NCT03525548 adverse events module
+VX17-445-103,Triple,2,55,NCT03525548 adverse events module

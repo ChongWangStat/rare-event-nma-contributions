@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.DS_Store
+manuscript/
+submission/
+NOTES_INTERNAL.md
+ACS_TEMPLATE.md

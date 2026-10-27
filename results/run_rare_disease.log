@@ -1,0 +1,134 @@
+
+=== NMOSD relapse prevention ===
+connected False treatments ['Control', 'Eculizumab', 'Inebilizumab', 'Ravulizumab', 'Rituximab', 'Satralizumab', 'Tocilizumab'] studies ['N-MOmentum', 'PREVENT', 'TANGO', 'SAkuraStar', 'RIN-1', 'SAkuraSky', 'CHAMPION']
+CHAMPION (single-arm) Laplacian zero? True
+Control Eculizumab RD -0.3943 SE 0.0743 direct 1.0
+     study    d    W       C
+1  PREVENT  1.0  1.0 -0.3943
+Control Inebilizumab RD -0.2722 SE 0.0698 direct 1.0
+        study    d    W       C
+0  N-MOmentum  1.0  1.0 -0.2722
+Control Satralizumab RD -0.2157 SE 0.0722 direct 1.0
+        study       d       W       C
+3  SAkuraStar  0.5056  0.5056 -0.1003
+5   SAkuraSky  0.4944  0.4944 -0.1154
+Control Rituximab RD -0.3684 SE 0.1107 direct 1.0
+   study    d    W       C
+4  RIN-1  1.0  1.0 -0.3684
+Eculizumab Inebilizumab RD 0.1221 SE 0.1019 direct 0.0
+        study    d    W       C
+0  N-MOmentum  0.0  1.0 -0.2722
+1     PREVENT  0.0  1.0  0.3943
+Satralizumab Eculizumab RD -0.1785 SE 0.1036 direct 0.0
+        study    d       W       C
+1     PREVENT  0.0  1.0000 -0.3943
+3  SAkuraStar  0.0  0.5056  0.1003
+5   SAkuraSky  0.0  0.4944  0.1154
+Q df net/het/inc 1 1 0  Q_het 0.01288  Q_inc 0.0
+
+CHAMPION merged into PREVENT (3-arm): Control:Ravulizumab RD -0.4255 SE 0.0721
+     study    d    W       C
+1  PREVENT  1.0  1.0 -0.4255
+Control:Eculizumab with 3-arm PREVENT: -0.3943 (was -0.3943 )
+        study        a             b  r_a  n_a  r_b  n_b      rd  fisher_p
+0  N-MOmentum  Control  Inebilizumab   22   56   21  174 -0.2722    0.0000
+1     PREVENT  Control    Eculizumab   20   47    3   96 -0.3943    0.0000
+2       TANGO  Control   Tocilizumab   28   59    8   59 -0.3390    0.0001
+3  SAkuraStar  Control  Satralizumab   16   32   19   63 -0.1984    0.0733
+4       RIN-1  Control     Rituximab    7   19    0   19 -0.3684    0.0080
+5   SAkuraSky  Control  Satralizumab   18   42    8   41 -0.2334    0.0326
+planned Control vs Ravulizumab n/arm 50 direct weight 0.491
+planned Control vs Ravulizumab n/arm 100 direct weight 0.658
+planned Control vs Ravulizumab n/arm 200 direct weight 0.794
+
+=== SMA safety: nusinersen vs sham, pneumonia ===
+     study       d  direct_est       C
+0  EMBRACE  0.0781      0.6429  0.0502
+1   ENDEAR  0.4535      0.1168  0.0530
+2  CHERISH  0.4684     -0.1190 -0.0558
+estimate 0.0474 SE 0.0451 pct [-0.0419  0.1315]
+Q_het 2.56083 df 2 E0 0.36669 p 0.00105  Q_inc df 0
+     study  r_a  n_a  r_b  n_b      rd  fisher_p
+0  EMBRACE    9   14    0    7 -0.6429    0.0071
+1   ENDEAR   23   80    7   41 -0.1168    0.1871
+2  CHERISH    2   84    6   42  0.1190    0.0165
+sigma_delta^2 0.03324392742553996 tau 0.2578523896555545
+SE common 0.0457 SE with tau^2 0.1754
+
+=== SMA efficacy and external controls ===
+A Control Nusinersen {'est': 0.3095, 'se': 0.0867, 'pct': [0.131, 0.476], 'direct': 1.0, 'rows': [{'study': 'CHERISH', 'd': 1.0, 'W': 1.0, 'C': 0.3095}]}
+A Control Risdiplam {'est': 0.1453, 'se': 0.0716, 'pct': [0.007, 0.283], 'direct': 1.0, 'rows': [{'study': 'SUNFISH', 'd': 1.0, 'W': 1.0, 'C': 0.1453}]}
+A Nusinersen Risdiplam {'est': -0.1642, 'se': 0.1124, 'pct': [-0.383, 0.058], 'direct': 0.0, 'rows': [{'study': 'CHERISH', 'd': 0.0, 'W': 1.0, 'C': -0.3095}, {'study': 'SUNFISH', 'd': 0.0, 'W': 1.0, 'C': 0.1453}]}
+B study-specific baselines: connected? False | K zero for single-arm: ['STR1VE', 'FIREFISH']
+B Control Nusinersen {'est': 0.5068, 'se': np.float64(0.0585), 'borrowed_share': 0.0, 'currents': {'Nusinersen': -1.0, 'Control': 1.0, 'Onasemnogene': 0.0, 'Risdiplam-infant': 0.0}}
+B Control Onasemnogene {'est': 0.5909, 'se': np.float64(0.1048), 'borrowed_share': 1.0, 'currents': {'Nusinersen': -0.0, 'Control': 1.0, 'Onasemnogene': -1.0, 'Risdiplam-infant': 0.0}}
+B Control Risdiplam-infant {'est': 0.2927, 'se': np.float64(0.0711), 'borrowed_share': 1.0, 'currents': {'Nusinersen': -0.0, 'Control': 1.0, 'Onasemnogene': 0.0, 'Risdiplam-infant': -1.0}}
+B Nusinersen Onasemnogene {'est': 0.0841, 'se': np.float64(0.12), 'borrowed_share': 1.0, 'currents': {'Nusinersen': 1.0, 'Control': -0.0, 'Onasemnogene': -1.0, 'Risdiplam-infant': 0.0}}
+A      study  r_a  n_a  r_b  n_b      rd  fisher_p
+0  CHERISH   11   42   48   84  0.3095    0.0012
+1  SUNFISH   14   59   44  115  0.1453    0.0627
+ENDEAR     study  r_a  n_a  r_b  n_b      rd  fisher_p
+0  ENDEAR    0   37   37   73  0.5068       0.0
+later-onset Nusinersen:Risdiplam r_ab 0.06136 reduction from 100/arm head-to-head 0.04628 direct weight of that trial 0.754
+
+=== Cystic fibrosis: serious adverse events ===
+connected True T 6 studies 7 arms 16 events 469 n 2340
+df net/het/inc 4 3 1
+
+Placebo:Triple RD -0.0652 SE 0.0319 direct mass 0.820 routes 1 unique True maxwidth -0.000
+          study       d       W       C
+4        EVOLVE  0.0000  0.1798 -0.0105
+5  VX17-445-102  0.8202  0.8202 -0.0577
+6  VX17-445-103  0.0000  0.1798  0.0031
+   route 0.1798 EVOLVE/VX17-445-103 Placebo→TEZ/IVA→Triple
+
+TEZ/IVA:Triple RD -0.0024 SE 0.0349 direct mass 0.322 routes 1 unique True maxwidth 0.000
+          study       d       W       C
+4        EVOLVE  0.0000  0.6778  0.0398
+5  VX17-445-102  0.0000  0.6778 -0.0477
+6  VX17-445-103  0.3222  0.3222  0.0055
+   route 0.6778 EVOLVE/VX17-445-102 TEZ/IVA→Placebo→Triple
+
+Placebo:TEZ/IVA RD -0.0628 SE 0.0281 direct mass 0.858 routes 1 unique True maxwidth -0.000
+          study       d       W       C
+4        EVOLVE  0.8576  0.8576 -0.0503
+5  VX17-445-102  0.0000  0.1424 -0.0100
+6  VX17-445-103  0.0000  0.1424 -0.0024
+   route 0.1424 VX17-445-102/VX17-445-103 Placebo→Triple→TEZ/IVA
+
+Placebo:Ivacaftor RD -0.1470 SE 0.0617 direct mass 1.000 routes 0 unique True maxwidth 0.000
+      study       d       W       C
+0    STRIVE  0.7557  0.7557 -0.1376
+1  ENVISION  0.2443  0.2443 -0.0094
+
+Q_het 0.7548 E0 0.5285 p 0.2294 | Q_inc 0.015 E0 0.0618 p 0.6184 | T_W 0.241 df 1 chi2 p 0.624
+           study            a           b  r_a  n_a  r_b  n_b     rd  fisher_p
+0         STRIVE    Ivacaftor     Placebo   20   83   33   78  0.182     0.019
+1       ENVISION    Ivacaftor     Placebo    5   26    6   26  0.038     1.000
+2        TRAFFIC   LUM/IVA qd     Placebo   33  183   49  184  0.086     0.060
+3        TRAFFIC  LUM/IVA bid     Placebo   33  182   49  184  0.085     0.060
+4        TRAFFIC  LUM/IVA bid  LUM/IVA qd   33  182   33  183 -0.001     1.000
+5      TRANSPORT   LUM/IVA qd     Placebo   51  186   57  186  0.032     0.568
+6      TRANSPORT  LUM/IVA bid     Placebo   31  187   57  186  0.141     0.002
+7      TRANSPORT  LUM/IVA bid  LUM/IVA qd   31  187   51  186  0.108     0.013
+8         EVOLVE      Placebo     TEZ/IVA   47  258   31  251 -0.059     0.084
+9   VX17-445-102      Placebo      Triple   42  201   28  202 -0.070     0.067
+10  VX17-445-103      TEZ/IVA      Triple    1   52    2   55  0.017     1.000
+                    target  direct  routes  unique   eff
+0    Ivacaftor:LUM/IVA bid   0.000       4   False  0.00
+1     Ivacaftor:LUM/IVA qd   0.000       4   False  0.00
+2        Ivacaftor:Placebo   1.000       0    True  1.59
+3        Ivacaftor:TEZ/IVA   0.000       3   False  0.00
+4         Ivacaftor:Triple   0.000       3   False  0.00
+5   LUM/IVA bid:LUM/IVA qd   0.999       1    True  2.00
+6      LUM/IVA bid:Placebo   0.999       1    True  2.00
+7      LUM/IVA bid:TEZ/IVA   0.000       4   False  0.00
+8       LUM/IVA bid:Triple   0.000       4   False  0.00
+9       LUM/IVA qd:Placebo   1.000       1    True  2.00
+10      LUM/IVA qd:TEZ/IVA   0.000       4   False  0.00
+11       LUM/IVA qd:Triple   0.000       4   False  0.00
+12         Placebo:TEZ/IVA   0.858       1    True  1.00
+13          Placebo:Triple   0.820       1    True  1.00
+14          TEZ/IVA:Triple   0.322       1    True  1.00
+
+wrote to /home/claude/pkg/results

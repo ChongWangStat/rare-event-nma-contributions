@@ -1,0 +1,90 @@
+network,target,study,d_pub,d_anticipated,d_actual,W_pub,W_anticipated,W_actual
+nmosd,Control:Eculizumab,PREVENT,1.0,1.0,1.0,1.0,1.0,1.0
+nmosd,Control:Inebilizumab,N-MOmentum,1.0,1.0,1.0,1.0,1.0,1.0
+nmosd,Control:Rituximab,RIN-1,1.0,1.0,1.0,1.0,1.0,1.0
+nmosd,Control:Satralizumab,SAkuraStar,0.506,0.469,0.503,0.506,0.469,0.503
+nmosd,Control:Satralizumab,SAkuraSky,0.494,0.531,0.497,0.494,0.531,0.497
+nmosd,Control:Tocilizumab,TANGO,1.0,1.0,1.0,1.0,1.0,1.0
+nmosd,Eculizumab:Inebilizumab,N-MOmentum,0.0,0.0,0.0,1.0,1.0,1.0
+nmosd,Eculizumab:Inebilizumab,PREVENT,0.0,0.0,0.0,1.0,1.0,1.0
+nmosd,Eculizumab:Rituximab,PREVENT,0.0,0.0,0.0,1.0,1.0,1.0
+nmosd,Eculizumab:Rituximab,RIN-1,0.0,0.0,0.0,1.0,1.0,1.0
+nmosd,Eculizumab:Satralizumab,PREVENT,0.0,0.0,0.0,1.0,1.0,1.0
+nmosd,Eculizumab:Satralizumab,SAkuraStar,0.0,0.0,0.0,0.506,0.469,0.503
+nmosd,Eculizumab:Satralizumab,SAkuraSky,0.0,0.0,0.0,0.494,0.531,0.497
+nmosd,Eculizumab:Tocilizumab,PREVENT,0.0,0.0,0.0,1.0,1.0,1.0
+nmosd,Eculizumab:Tocilizumab,TANGO,0.0,0.0,0.0,1.0,1.0,1.0
+nmosd,Inebilizumab:Rituximab,N-MOmentum,0.0,0.0,0.0,1.0,1.0,1.0
+nmosd,Inebilizumab:Rituximab,RIN-1,0.0,0.0,0.0,1.0,1.0,1.0
+nmosd,Inebilizumab:Satralizumab,N-MOmentum,0.0,0.0,0.0,1.0,1.0,1.0
+nmosd,Inebilizumab:Satralizumab,SAkuraStar,0.0,0.0,0.0,0.506,0.469,0.503
+nmosd,Inebilizumab:Satralizumab,SAkuraSky,0.0,0.0,0.0,0.494,0.531,0.497
+nmosd,Inebilizumab:Tocilizumab,N-MOmentum,0.0,0.0,0.0,1.0,1.0,1.0
+nmosd,Inebilizumab:Tocilizumab,TANGO,0.0,0.0,0.0,1.0,1.0,1.0
+nmosd,Rituximab:Satralizumab,SAkuraStar,0.0,0.0,0.0,0.506,0.469,0.503
+nmosd,Rituximab:Satralizumab,RIN-1,0.0,0.0,0.0,1.0,1.0,1.0
+nmosd,Rituximab:Satralizumab,SAkuraSky,0.0,0.0,0.0,0.494,0.531,0.497
+nmosd,Rituximab:Tocilizumab,TANGO,0.0,0.0,0.0,1.0,1.0,1.0
+nmosd,Rituximab:Tocilizumab,RIN-1,0.0,0.0,0.0,1.0,1.0,1.0
+nmosd,Satralizumab:Tocilizumab,TANGO,0.0,0.0,0.0,1.0,1.0,1.0
+nmosd,Satralizumab:Tocilizumab,SAkuraStar,0.0,0.0,0.0,0.506,0.469,0.503
+nmosd,Satralizumab:Tocilizumab,SAkuraSky,0.0,0.0,0.0,0.494,0.531,0.497
+cf,Placebo:Ivacaftor,STRIVE,0.756,0.727,0.764,0.756,0.727,0.764
+cf,Placebo:Ivacaftor,ENVISION,0.244,0.273,0.236,0.244,0.273,0.236
+cf,Placebo:LUM/IVA bid,TRAFFIC,0.495,0.5,0.497,0.496,0.5,0.497
+cf,Placebo:LUM/IVA bid,TRANSPORT,0.504,0.5,0.503,0.505,0.5,0.503
+cf,Placebo:LUM/IVA qd,TRAFFIC,0.496,0.5,0.497,0.497,0.5,0.497
+cf,Placebo:LUM/IVA qd,TRANSPORT,0.503,0.5,0.503,0.504,0.5,0.503
+cf,Placebo:TEZ/IVA,EVOLVE,0.858,0.862,0.853,0.858,0.862,0.853
+cf,Placebo:TEZ/IVA,VX17-445-102,0.0,0.0,0.0,0.142,0.138,0.147
+cf,Placebo:TEZ/IVA,VX17-445-103,0.0,0.0,0.0,0.142,0.138,0.147
+cf,Placebo:Triple,EVOLVE,0.0,0.0,0.0,0.18,0.187,0.185
+cf,Placebo:Triple,VX17-445-102,0.82,0.813,0.815,0.82,0.813,0.815
+cf,Placebo:Triple,VX17-445-103,0.0,0.0,0.0,0.18,0.187,0.185
+cf,Ivacaftor:LUM/IVA bid,STRIVE,0.0,0.0,0.0,0.756,0.727,0.764
+cf,Ivacaftor:LUM/IVA bid,ENVISION,0.0,0.0,0.0,0.244,0.273,0.236
+cf,Ivacaftor:LUM/IVA bid,TRAFFIC,0.0,0.0,0.0,0.496,0.5,0.497
+cf,Ivacaftor:LUM/IVA bid,TRANSPORT,0.0,0.0,0.0,0.505,0.5,0.503
+cf,Ivacaftor:LUM/IVA qd,STRIVE,0.0,0.0,0.0,0.756,0.727,0.764
+cf,Ivacaftor:LUM/IVA qd,ENVISION,0.0,0.0,0.0,0.244,0.273,0.236
+cf,Ivacaftor:LUM/IVA qd,TRAFFIC,0.0,0.0,0.0,0.497,0.5,0.497
+cf,Ivacaftor:LUM/IVA qd,TRANSPORT,0.0,0.0,0.0,0.504,0.5,0.503
+cf,Ivacaftor:TEZ/IVA,STRIVE,0.0,0.0,0.0,0.756,0.727,0.764
+cf,Ivacaftor:TEZ/IVA,ENVISION,0.0,0.0,0.0,0.244,0.273,0.236
+cf,Ivacaftor:TEZ/IVA,EVOLVE,0.0,0.0,0.0,0.858,0.862,0.853
+cf,Ivacaftor:TEZ/IVA,VX17-445-102,0.0,0.0,0.0,0.142,0.138,0.147
+cf,Ivacaftor:TEZ/IVA,VX17-445-103,0.0,0.0,0.0,0.142,0.138,0.147
+cf,Ivacaftor:Triple,STRIVE,0.0,0.0,0.0,0.756,0.727,0.764
+cf,Ivacaftor:Triple,ENVISION,0.0,0.0,0.0,0.244,0.273,0.236
+cf,Ivacaftor:Triple,EVOLVE,0.0,0.0,0.0,0.18,0.187,0.185
+cf,Ivacaftor:Triple,VX17-445-102,0.0,0.0,0.0,0.82,0.813,0.815
+cf,Ivacaftor:Triple,VX17-445-103,0.0,0.0,0.0,0.18,0.187,0.185
+cf,LUM/IVA bid:LUM/IVA qd,TRAFFIC,0.494,0.5,0.497,0.495,0.5,0.497
+cf,LUM/IVA bid:LUM/IVA qd,TRANSPORT,0.505,0.5,0.503,0.506,0.5,0.503
+cf,LUM/IVA bid:TEZ/IVA,TRAFFIC,0.0,0.0,0.0,0.496,0.5,0.497
+cf,LUM/IVA bid:TEZ/IVA,TRANSPORT,0.0,0.0,0.0,0.505,0.5,0.503
+cf,LUM/IVA bid:TEZ/IVA,EVOLVE,0.0,0.0,0.0,0.858,0.862,0.853
+cf,LUM/IVA bid:TEZ/IVA,VX17-445-102,0.0,0.0,0.0,0.142,0.138,0.147
+cf,LUM/IVA bid:TEZ/IVA,VX17-445-103,0.0,0.0,0.0,0.142,0.138,0.147
+cf,LUM/IVA bid:Triple,TRAFFIC,0.0,0.0,0.0,0.496,0.5,0.497
+cf,LUM/IVA bid:Triple,TRANSPORT,0.0,0.0,0.0,0.505,0.5,0.503
+cf,LUM/IVA bid:Triple,EVOLVE,0.0,0.0,0.0,0.18,0.187,0.185
+cf,LUM/IVA bid:Triple,VX17-445-102,0.0,0.0,0.0,0.82,0.813,0.815
+cf,LUM/IVA bid:Triple,VX17-445-103,0.0,0.0,0.0,0.18,0.187,0.185
+cf,LUM/IVA qd:TEZ/IVA,TRAFFIC,0.0,0.0,0.0,0.497,0.5,0.497
+cf,LUM/IVA qd:TEZ/IVA,TRANSPORT,0.0,0.0,0.0,0.504,0.5,0.503
+cf,LUM/IVA qd:TEZ/IVA,EVOLVE,0.0,0.0,0.0,0.858,0.862,0.853
+cf,LUM/IVA qd:TEZ/IVA,VX17-445-102,0.0,0.0,0.0,0.142,0.138,0.147
+cf,LUM/IVA qd:TEZ/IVA,VX17-445-103,0.0,0.0,0.0,0.142,0.138,0.147
+cf,LUM/IVA qd:Triple,TRAFFIC,0.0,0.0,0.0,0.497,0.5,0.497
+cf,LUM/IVA qd:Triple,TRANSPORT,0.0,0.0,0.0,0.504,0.5,0.503
+cf,LUM/IVA qd:Triple,EVOLVE,0.0,0.0,0.0,0.18,0.187,0.185
+cf,LUM/IVA qd:Triple,VX17-445-102,0.0,0.0,0.0,0.82,0.813,0.815
+cf,LUM/IVA qd:Triple,VX17-445-103,0.0,0.0,0.0,0.18,0.187,0.185
+cf,TEZ/IVA:Triple,EVOLVE,0.0,0.0,0.0,0.678,0.675,0.668
+cf,TEZ/IVA:Triple,VX17-445-102,0.0,0.0,0.0,0.678,0.675,0.668
+cf,TEZ/IVA:Triple,VX17-445-103,0.322,0.325,0.332,0.322,0.325,0.332
+sma,Control:Nusinersen,CHERISH,1.0,1.0,1.0,1.0,1.0,1.0
+sma,Control:Risdiplam,SUNFISH,1.0,1.0,1.0,1.0,1.0,1.0
+sma,Nusinersen:Risdiplam,CHERISH,0.0,0.0,0.0,1.0,1.0,1.0
+sma,Nusinersen:Risdiplam,SUNFISH,0.0,0.0,0.0,1.0,1.0,1.0

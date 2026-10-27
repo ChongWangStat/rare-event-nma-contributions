@@ -1,0 +1,14 @@
+sum eta 1.0 r_ab 0.00023099212114146574
+   study                       arms      d      W    eta
+2      3             TIO-HH/Placebo  0.346  0.346  0.346
+11    12                TIO-HH/LABA  0.000  0.236  0.131
+9     10             TIO-HH/Placebo  0.106  0.106  0.106
+7      8             TIO-HH/Placebo  0.058  0.058  0.058
+5      6             TIO-HH/Placebo  0.047  0.047  0.047
+12    13        TIO-HH/LABA/Placebo  0.045  0.048  0.047
+10    11             TIO-HH/Placebo  0.046  0.046  0.046
+35    36  LABA-ICS/LABA/ICS/Placebo  0.000  0.104  0.039
+max |eta-d| two-arm direct: 6.938893903907228e-18
+Placebo TIO-HH SE plug-in n 0.00358 SE unbiased n-1 0.00358
+Control/Placebo Aprotinin SE plug-in n 0.0227 SE unbiased n-1 0.023
+wrote /home/claude/pkg/results/dong_precision_shares.tex

@@ -1,0 +1,55 @@
+            network                  target  estimate  halfwidth  n_direct  n_direct_sig  weight_share_nonsig  direct_mass    best_trial  best_single_halfwidth  precision_gain   mid  network_excludes_mid  best_trial_excludes_mid
+0              COPD                ICS:LABA   -0.0076     0.0096         7             1               0.4799       0.5309            36                 0.0249          3.0474  0.01                  True                    False
+1              COPD            ICS:LABA-ICS   -0.0135     0.0097         7             1               0.5073       0.6407            36                 0.0245          2.8610  0.01                  True                    False
+2              COPD             ICS:Placebo   -0.0028     0.0086        15             0               1.0000       0.7689            36                 0.0254          3.6327  0.01                  True                    False
+3              COPD           LABA:LABA-ICS   -0.0058     0.0064        15             0               1.0000       0.7817            36                 0.0236          4.5106  0.01                  True                    False
+4              COPD            LABA:Placebo    0.0048     0.0064        13             0               1.0000       0.5902            36                 0.0246          5.1371  0.01                  True                    False
+5              COPD             LABA:TIO-HH   -0.0006     0.0060         2             0               1.0000       0.5666            12                 0.0063          1.9528  0.01                  True                     True
+6              COPD        LABA-ICS:Placebo    0.0106     0.0073        10             1               0.6287       0.5954            36                 0.0243          4.0587  0.01                  True                    False
+7              COPD         LABA-ICS:TIO-HH    0.0053     0.0080         1             1               0.0000       0.1338            14                 0.0222          7.4757  0.01                  True                    False
+8              COPD          Placebo:TIO-HH   -0.0054     0.0070        10             0               1.0000       0.7078             3                 0.0172          2.8900  0.01                  True                    False
+9              COPD         Placebo:TIO-SMI    0.0088     0.0074         2             0               1.0000       1.0000             1                 0.0092          1.4397  0.01                  True                     True
+10  Cystic fibrosis       Ivacaftor:Placebo    0.1470     0.1221         2             1               0.2443       1.0000        STRIVE                 0.1440          1.3233  0.05                 False                    False
+11  Cystic fibrosis  LUM/IVA bid:LUM/IVA qd    0.0543     0.0576         2             1               0.4946       0.9991     TRANSPORT                 0.0836          1.9786  0.05                 False                    False
+12  Cystic fibrosis     LUM/IVA bid:Placebo    0.1132     0.0603         2             1               0.4953       0.9986     TRANSPORT                 0.0853          1.9812  0.05                 False                    False
+13  Cystic fibrosis      LUM/IVA qd:Placebo    0.0589     0.0628         2             0               1.0000       0.9995     TRANSPORT                 0.0924          1.9866  0.05                 False                    False
+14  Cystic fibrosis         Placebo:TEZ/IVA   -0.0628     0.0552         1             0               1.0000       0.8576        EVOLVE                 0.0624          1.1660  0.05                 False                    False
+15  Cystic fibrosis          Placebo:Triple   -0.0652     0.0626         1             0               1.0000       0.8202  VX17-445-102                 0.0739          1.2192  0.05                 False                    False
+16  Cystic fibrosis          TEZ/IVA:Triple   -0.0024     0.0686         1             0               1.0000       0.3222  VX17-445-103                 0.0626          3.1035  0.05                 False                    False
+17            NMOSD      Control:Eculizumab   -0.3943     0.1471         1             1               0.0000       1.0000       PREVENT                 0.1471          1.0000  0.10                 False                    False
+18            NMOSD    Control:Inebilizumab   -0.2722     0.1379         1             1               0.0000       1.0000    N-MOmentum                 0.1379          1.0000  0.10                 False                    False
+19            NMOSD       Control:Rituximab   -0.3684     0.2228         1             1               0.0000       1.0000         RIN-1                    NaN          1.0000  0.10                 False                    False
+20            NMOSD    Control:Satralizumab   -0.2157     0.1434         2             1               0.5056       1.0000    SAkuraStar                 0.2098          1.9777  0.10                 False                    False
+21            NMOSD     Control:Tocilizumab   -0.3390     0.1558         1             1               0.0000       1.0000         TANGO                 0.1558          1.0000  0.10                 False                    False
+{
+ "COPD": {
+  "targets": 10,
+  "targets_all_nonsig": 6,
+  "median_precision_gain_all_nonsig": 3.261320000919614,
+  "n_network_excludes_mid": 10,
+  "n_best_trial_excludes_mid": 2,
+  "n_network_only": 8,
+  "mid": 0.01,
+  "median_precision_gain": 3.340025889618645
+ },
+ "Cystic fibrosis": {
+  "targets": 7,
+  "targets_all_nonsig": 4,
+  "median_precision_gain_all_nonsig": 1.602897075708744,
+  "n_network_excludes_mid": 0,
+  "n_best_trial_excludes_mid": 0,
+  "n_network_only": 0,
+  "mid": 0.05,
+  "median_precision_gain": 1.9785568204176063
+ },
+ "NMOSD": {
+  "targets": 5,
+  "targets_all_nonsig": 0,
+  "median_precision_gain_all_nonsig": null,
+  "n_network_excludes_mid": 0,
+  "n_best_trial_excludes_mid": 0,
+  "n_network_only": 0,
+  "mid": 0.1,
+  "median_precision_gain": 1.0000000000000002
+ }
+}

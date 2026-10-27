@@ -1,0 +1,328 @@
+{
+ "cc": [
+  {
+   "scale": "rd (design-fixed, this paper)",
+   "cc": 0.0,
+   "rule": "none",
+   "estimate": -0.005354448660136085,
+   "q": 0.2922140574677522,
+   "d_study3": 0.34602234246121844,
+   "d_study10": 0.10562111581838121,
+   "d_study36": 0.0,
+   "W_study12": 0.23638134264721533,
+   "n_zero_cc_studies": 0
+  },
+  {
+   "scale": "rd",
+   "cc": 0.5,
+   "rule": "constant",
+   "estimate": -0.003258838283954275,
+   "q": 0.40678129565008403,
+   "d_study3": 0.061771217554525595,
+   "d_study10": 0.09866197333152055,
+   "d_study36": 0.0,
+   "W_study12": 0.31728754474688653,
+   "n_zero_cc_studies": 12
+  },
+  {
+   "scale": "logit",
+   "cc": 0.5,
+   "rule": "constant",
+   "estimate": -0.08485030441989719,
+   "q": 0.15533647603309508,
+   "d_study3": 0.7401875714694427,
+   "d_study10": 0.04299171667383307,
+   "d_study36": 0.0,
+   "W_study12": 0.11048929975751458,
+   "n_zero_cc_studies": 12
+  },
+  {
+   "scale": "logit",
+   "cc": 0.25,
+   "rule": "constant",
+   "estimate": -0.08532277958501164,
+   "q": 0.15527384269279465,
+   "d_study3": 0.7413330125326097,
+   "d_study10": 0.04305824640163773,
+   "d_study36": 0.0,
+   "W_study12": 0.11043475867833828,
+   "n_zero_cc_studies": 12
+  },
+  {
+   "scale": "logit",
+   "cc": 0.5,
+   "rule": "armsize",
+   "estimate": -0.08497111045881763,
+   "q": 0.15575866550545148,
+   "d_study3": 0.739795927835294,
+   "d_study10": 0.042968969153062087,
+   "d_study36": 0.0,
+   "W_study12": 0.11081205617473394,
+   "n_zero_cc_studies": 12
+  },
+  {
+   "scale": "logit",
+   "cc": 1.0,
+   "rule": "constant",
+   "estimate": -0.08443198581687159,
+   "q": 0.15542385057361718,
+   "d_study3": 0.7381169863024275,
+   "d_study10": 0.04287145254852138,
+   "d_study36": 0.0,
+   "W_study12": 0.11057216236718018,
+   "n_zero_cc_studies": 12
+  }
+ ],
+ "shortest_path": {
+  "n_paths": 6,
+  "recon_with_direct_only": -0.003406892512505758,
+  "n_study_shares_without_target_estimate": 70,
+  "estimate": -0.005354448660136085,
+  "top_comparisons": [
+   [
+    [
+     "Placebo",
+     "TIO-HH"
+    ],
+    0.6939885259553977
+   ],
+   [
+    [
+     "LABA",
+     "TIO-HH"
+    ],
+    0.10696215297653709
+   ],
+   [
+    [
+     "Placebo",
+     "LABA"
+    ],
+    0.07366126972046516
+   ],
+   [
+    [
+     "Placebo",
+     "LABA-ICS"
+    ],
+    0.0381133670451664
+   ],
+   [
+    [
+     "LABA-ICS",
+     "TIO-HH"
+    ],
+    0.026169217303605413
+   ]
+  ],
+  "study3_share": 0.34602234246121855,
+  "csp_d3": 0.34602234246121844
+ },
+ "loo": {
+  "top": [
+   {
+    "study": "3",
+    "loo_importance": 0.346,
+    "d": 0.346,
+    "W": 0.346,
+    "C": -0.0032
+   },
+   {
+    "study": "12",
+    "loo_importance": 0.2119,
+    "d": 0.0,
+    "W": 0.2364,
+    "C": -0.0009
+   },
+   {
+    "study": "10",
+    "loo_importance": 0.1056,
+    "d": 0.1056,
+    "W": 0.1056,
+    "C": 0.0003
+   },
+   {
+    "study": "8",
+    "loo_importance": 0.0583,
+    "d": 0.0583,
+    "W": 0.0583,
+    "C": -0.0001
+   },
+   {
+    "study": "36",
+    "loo_importance": 0.0483,
+    "d": 0.0,
+    "W": 0.1038,
+    "C": -0.0021
+   }
+  ],
+  "corr_with_d": 0.8486515053463534,
+  "corr_with_W": 0.9891803291623775
+ },
+ "mh": {
+  "copd": [
+   [
+    "25",
+    "37",
+    "5"
+   ],
+   [
+    [
+     "LABA-ICS|Placebo",
+     "Placebo",
+     1
+    ]
+   ]
+  ],
+  "nmosd": [
+   [
+    "CHAMPION"
+   ],
+   [
+    [
+     "Control|Rituximab",
+     "Rituximab",
+     1
+    ]
+   ]
+  ]
+ },
+ "conc": [
+  {
+   "target": "ICS:LABA",
+   "eff_direct": 3.203,
+   "direct_mass": 0.531,
+   "n_zero_throughput": 2,
+   "n_studies": 41
+  },
+  {
+   "target": "ICS:LABA-ICS",
+   "eff_direct": 3.432,
+   "direct_mass": 0.641,
+   "n_zero_throughput": 2,
+   "n_studies": 41
+  },
+  {
+   "target": "ICS:Placebo",
+   "eff_direct": 7.692,
+   "direct_mass": 0.769,
+   "n_zero_throughput": 2,
+   "n_studies": 41
+  },
+  {
+   "target": "ICS:TIO-HH",
+   "eff_direct": 0.0,
+   "direct_mass": 0.0,
+   "n_zero_throughput": 2,
+   "n_studies": 41
+  },
+  {
+   "target": "ICS:TIO-SMI",
+   "eff_direct": 0.0,
+   "direct_mass": 0.0,
+   "n_zero_throughput": 0,
+   "n_studies": 41
+  },
+  {
+   "target": "LABA:LABA-ICS",
+   "eff_direct": 8.569,
+   "direct_mass": 0.782,
+   "n_zero_throughput": 2,
+   "n_studies": 41
+  },
+  {
+   "target": "LABA:Placebo",
+   "eff_direct": 6.911,
+   "direct_mass": 0.59,
+   "n_zero_throughput": 2,
+   "n_studies": 41
+  },
+  {
+   "target": "LABA:TIO-HH",
+   "eff_direct": 1.211,
+   "direct_mass": 0.567,
+   "n_zero_throughput": 2,
+   "n_studies": 41
+  },
+  {
+   "target": "LABA:TIO-SMI",
+   "eff_direct": 0.0,
+   "direct_mass": 0.0,
+   "n_zero_throughput": 0,
+   "n_studies": 41
+  },
+  {
+   "target": "LABA-ICS:Placebo",
+   "eff_direct": 5.144,
+   "direct_mass": 0.595,
+   "n_zero_throughput": 2,
+   "n_studies": 41
+  },
+  {
+   "target": "LABA-ICS:TIO-HH",
+   "eff_direct": 1.0,
+   "direct_mass": 0.134,
+   "n_zero_throughput": 2,
+   "n_studies": 41
+  },
+  {
+   "target": "LABA-ICS:TIO-SMI",
+   "eff_direct": 0.0,
+   "direct_mass": 0.0,
+   "n_zero_throughput": 0,
+   "n_studies": 41
+  },
+  {
+   "target": "Placebo:TIO-HH",
+   "eff_direct": 3.529,
+   "direct_mass": 0.708,
+   "n_zero_throughput": 2,
+   "n_studies": 41
+  },
+  {
+   "target": "Placebo:TIO-SMI",
+   "eff_direct": 1.737,
+   "direct_mass": 1.0,
+   "n_zero_throughput": 39,
+   "n_studies": 41
+  },
+  {
+   "target": "TIO-HH:TIO-SMI",
+   "eff_direct": 0.0,
+   "direct_mass": 0.0,
+   "n_zero_throughput": 0,
+   "n_studies": 41
+  }
+ ],
+ "allocation": {
+  "r_ab": 0.00023099212114146574,
+  "ranking": [
+   {
+    "candidate": "Placebo:TIO-HH",
+    "potential_gap": 0.000231,
+    "reduction_r_ab": 1.3e-05
+   },
+   {
+    "candidate": "TIO-HH:TIO-SMI",
+    "potential_gap": -0.000231,
+    "reduction_r_ab": 1.1e-05
+   },
+   {
+    "candidate": "ICS:TIO-HH",
+    "potential_gap": 0.00019,
+    "reduction_r_ab": 8e-06
+   },
+   {
+    "candidate": "LABA-ICS:TIO-HH",
+    "potential_gap": 0.000158,
+    "reduction_r_ab": 6e-06
+   },
+   {
+    "candidate": "LABA:TIO-HH",
+    "potential_gap": 0.000128,
+    "reduction_r_ab": 4e-06
+   },
+   {
+    "candidate": "LABA:Placebo",
+    "potential_gap": -0.000103,
+    "reduct

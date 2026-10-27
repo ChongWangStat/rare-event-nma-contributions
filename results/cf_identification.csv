@@ -1,0 +1,16 @@
+target,direct,routes,unique,eff
+Ivacaftor:LUM/IVA bid,0.0,4,False,0.0
+Ivacaftor:LUM/IVA qd,0.0,4,False,0.0
+Ivacaftor:Placebo,1.0,0,True,1.59
+Ivacaftor:TEZ/IVA,0.0,3,False,0.0
+Ivacaftor:Triple,0.0,3,False,0.0
+LUM/IVA bid:LUM/IVA qd,0.999,1,True,2.0
+LUM/IVA bid:Placebo,0.999,1,True,2.0
+LUM/IVA bid:TEZ/IVA,0.0,4,False,0.0
+LUM/IVA bid:Triple,0.0,4,False,0.0
+LUM/IVA qd:Placebo,1.0,1,True,2.0
+LUM/IVA qd:TEZ/IVA,0.0,4,False,0.0
+LUM/IVA qd:Triple,0.0,4,False,0.0
+Placebo:TEZ/IVA,0.858,1,True,1.0
+Placebo:Triple,0.82,1,True,1.0
+TEZ/IVA:Triple,0.322,1,True,1.0

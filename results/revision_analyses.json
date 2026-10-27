@@ -1,0 +1,611 @@
+{
+ "loo_design": {
+  "top5": [
+   {
+    "study": "3",
+    "imp_design": 0.346,
+    "d": 0.346,
+    "W": 0.346
+   },
+   {
+    "study": "12",
+    "imp_design": 0.2119,
+    "d": 0.0,
+    "W": 0.2364
+   },
+   {
+    "study": "10",
+    "imp_design": 0.1056,
+    "d": 0.1056,
+    "W": 0.1056
+   },
+   {
+    "study": "8",
+    "imp_design": 0.0583,
+    "d": 0.0583,
+    "W": 0.0583
+   },
+   {
+    "study": "36",
+    "imp_design": 0.0483,
+    "d": 0.0,
+    "W": 0.1038
+   }
+  ],
+  "corr_d": 0.8486515053463534,
+  "corr_W": 0.9891803291623775,
+  "study3": 0.346022342461218,
+  "study12": 0.21189361235253257,
+  "sum_importance": 1.0975492559979707,
+  "min_importance": -2.220446049250313e-16
+ },
+ "effective_trials": {
+  "Placebo:TIO-HH": {
+   "n_direct": 10,
+   "direct_mass": 0.7077859425322478,
+   "eff_trials": 3.5293135194914194,
+   "n_zero_throughput": 2,
+   "n_studies": 41
+  },
+  "Placebo:TIO-SMI": {
+   "n_direct": 2,
+   "direct_mass": 0.9999999999999997,
+   "eff_trials": 1.7369462241565223,
+   "n_zero_throughput": 39,
+   "n_studies": 41
+  }
+ },
+ "allocation": {
+  "copd_N1000": [
+   {
+    "trial": "Placebo:TIO-HH",
+    "reduction": 0.05459526147241965
+   },
+   {
+    "trial": "TIO-HH:TIO-SMI",
+    "reduction": 0.046881523316972006
+   },
+   {
+    "trial": "ICS:TIO-HH",
+    "reduction": 0.034634811145494354
+   },
+   {
+    "trial": "LABA-ICS:TIO-HH",
+    "reduction": 0.02461373551763448
+   },
+   {
+    "trial": "LABA:TIO-HH",
+    "reduction": 0.016631031806590882
+   },
+   {
+    "trial": "LABA:Placebo",
+    "reduction": 0.0107586409598642
+   },
+   {
+    "trial": "LABA:TIO-SMI",
+    "reduction": 0.009245107949726277
+   },
+   {
+    "trial": "LABA-ICS:Placebo",
+    "reduction": 0.005304487019833671
+   },
+   {
+    "trial": "LABA-ICS:TIO-SMI",
+    "reduction": 0.004568162752641963
+   },
+   {
+    "trial": "ICS:LABA",
+    "reduction": 0.003717772136189194
+   },
+   {
+    "trial": "ICS:Placebo",
+    "reduction": 0.0016838113347036928
+   },
+   {
+    "trial": "ICS:TIO-SMI",
+    "reduction": 0.0014517775351458018
+   },
+   {
+    "trial": "ICS:LABA-ICS",
+    "reduction": 0.0009703186072468735
+   },
+   {
+    "trial": "LABA:LABA-ICS",
+    "reduction": 0.000912041538680273
+   },
+   {
+    "trial": "Placebo:TIO-SMI",
+    "reduction": 1.5238547534200395e-33
+   }
+  ],
+  "copd_loss_2to1": 0.10568607750700787,
+  "nmosd_N200": [
+   {
+    "trial": "Eculizumab:Inebilizumab",
+    "reduction": 0.734387043677825
+   },
+   {
+    "trial": "Control:Eculizumab",
+    "reduction": 0.3513938893095591
+   },
+   {
+    "trial": "Eculizumab:Satralizumab",
+    "reduction": 0.24052536842611713
+   },
+   {
+    "trial": "Control:Inebilizumab",
+    "reduction": 0.23107148853894152
+   },
+   {
+    "trial": "Eculizumab:Tocilizumab",
+    "reduction": 0.21222530514646962
+   },
+   {
+    "trial": "Inebilizumab:Satralizumab",
+    "reduction": 0.14942037454197585
+   },
+   {
+    "trial": "Inebilizumab:Tocilizumab",
+    "reduction": 0.13000475781837975
+   },
+   {
+    "trial": "Eculizumab:Rituximab",
+    "reduction": 0.11573082830507783
+   },
+   {
+    "trial": "Inebilizumab:Rituximab",
+    "reduction": 0.06768239098826447
+   },
+   {
+    "trial": "Control:Rituximab",
+    "reduction": 1.1121705081920068e-31
+   },
+   {
+    "trial": "Rituximab:Satralizumab",
+    "reduction": 9.490811082910704e-32
+   },
+   {
+    "trial": "Rituximab:Tocilizumab",
+    "reduction": 7.69306427624083e-32
+   },
+   {
+    "trial": "Control:Tocilizumab",
+    "reduction": 1.009670475682731e-33
+   },
+   {
+    "trial": "Satralizumab:Tocilizumab",
+    "reduction": 8.86122397694756e-34
+   },
+   {
+    "trial": "Control:Satralizumab",
+    "reduction": 1.9401108978062645e-35
+   }
+  ]
+ },
+ "design_precision": {
+  "COPD": {
+   "targets": 10,
+   "median_gain": 3.340025889618645,
+   "median_gain_allnonsig": 3.261320000919614,
+   "n_allnonsig": 6
+  },
+  "Cystic fibrosis": {
+   "targets": 7,
+   "median_gain": 1.9785568204176063,
+   "median_gain_allnonsig": 1.602897075708744,
+   "n_allnonsig": 4
+  },
+  "Liver": {
+   "targets": 8,
+   "median_gain": 1.5156574208028721,
+   "median_gain_allnonsig": 1.5156574208028721,
+   "n_allnonsig": 8
+  },
+  "NMOSD": {
+   "targets": 5,
+   "median_gain": 1.0000000000000002,
+   "median_gain_allnonsig": null,
+   "n_allnonsig": 0
+  },
+  "COPD_Placebo:TIO-HH": 2.889986793590007
+ },
+ "efficiency": {
+  "COPD": {
+   "study_pooled": {
+    "min": 0.11717567758042037,
+    "median": 0.35160001837265653,
+    "max": 0.9999591421959959,
+    "n_targets": 15,
+    "risk_range": [
+     0.0006906077348066298,
+     0.14155214227970897
+    ]
+   },
+   "mle_floor_0.005": {
+    "min": 0.26084222365159554,
+    "median": 0.3984133373231195,
+    "max": 0.9920646267537497,
+    "n_targets": 15,
+    "risk_range": [
+     0.005,
+     0.14149419357689325
+    ]
+   }
+  },
+  "Cystic fibrosis": {
+   "study_pooled": {
+    "min": 0.6354878294998084,
+    "median": 0.9577795332331527,
+    "max": 0.9964087176415836,
+    "n_targets": 15,
+    "risk_range": [
+     0.032407407407407406,
+     0.33024691358024694
+    ]
+   },
+   "mle_floor_0.005": {
+    "min": 0.5770398849171462,
+    "median": 0.9543068166689211,
+    "max": 0.9978456568051066,
+    "n_targets": 15,
+    "risk_range": [
+     0.02286128162727557,
+     0.3990064237558317
+    ]
+   }
+  },
+  "Liver": {
+   "study_pooled": {
+    "min": 0.8035390992989103,
+    "median": 0.9878218540871267,
+    "max": 0.999999999999998,
+    "n_targets": 21,
+    "risk_range": [
+     0.019230769230769232,
+     0.08333333333333333
+    ]
+   },
+   "mle_floor_0.005": {
+    "min": 0.6415167713207391,
+    "median": 0.9777341813473658,
+    "max": 1.000000000000003,
+    "n_targets": 21,
+    "risk_range": [
+     0.005,
+     0.1249999715516381
+    ]
+   }
+  },
+  "NMOSD": {
+   "study_pooled": {
+    "min": 0.9985506020569348,
+    "median": 0.9999999999999989,
+    "max": 1.0000000000000013,
+    "n_targets": 15,
+    "risk_range": [
+     0.16319444444444445,
+     0.3697916666666667
+    ]
+   },
+   "mle_floor_0.005": {
+    "min": 0.9939120515448634,
+    "median": 0.9999999999999974,
+    "max": 1.0000000000000024,
+    "n_targets": 15,
+    "risk_range": [
+     0.005,
+     0.5131268405691282
+    ]
+   }
+  }
+ },
+ "mle_comparison": {
+  "rows": [
+   {
+    "target": "Placebo:ICS",
+    "design_fixed": 0.0028428549359198496,
+    "mle": -4.419573196632193e-09,
+    "diff": -0.002842859355493046
+   },
+   {
+    "target": "Placebo:LABA",
+    "design_fixed": -0.0048001702412269545,
+    "mle": -1.2777359710023166e-08,
+    "diff": 0.004800157463867244
+   },
+   {
+    "target": "Placebo:LABA-ICS",
+    "design_fixed": -0.010645646266951815,
+    "mle": -6.729225432258114e-09,
+    "diff": 0.010645639537726383
+   },
+   {
+    "target": "Placebo:TIO-HH",
+    "design_fixed": -0.005354448660136085,
+    "mle": -0.0026045150415827173,
+    "diff": 0.002749933618553368
+   },
+   {
+    "target": "Placebo:TIO-SMI",
+    "design_fixed": 0.008760939946595126,
+    "mle": 0.008983858503827657,
+    "diff": 0.00022291855723253172
+   }
+  ],
+  "max_abs_diff": 0.010645639537726383,
+  "boundary_arms": 7,
+  "zero_event_trials": [
+   "25",
+   "37",
+   "5"
+  ],
+  "zero_event_trial_treatments": {
+   "25": [
+    "ICS",
+    "Placebo"
+   ],
+   "37": [
+    "ICS",
+    "LABA",
+    "LABA-ICS",
+    "Placebo"
+   ],
+   "5": [
+    "Placebo",
+    "TIO-HH"
+   ]
+  },
+  "nll": 8378.417501321028
+ },
+ "tiospir": {
+  "network_est": 0.014115388606731217,
+  "network_se": 0.005211971487687512,
+  "network_interval": {
+   "estimate": 0.014115388606731213,
+   "percentile": [
+    0.003820807373442969,
+    0.024482001791181995
+   ],
+   "basic": [
+    0.003748775422280432,
+    0.024409969840019457
+   ],
+   "exact_se": 0.005211971487687512,
+   "normal": [
+    0.0039001122024140446,
+    0.024330665011048382
+   ]
+  },
+  "direct_mass_before": 0.0,
+  "tiospir_rd": -0.0030311115227750485,
+  "d_predicted": 0.7255401243183293,
+  "d_realized": 0.7255401243183295,
+  "est_after": 0.0016749147711449938,
+  "se_after": 0.003865998731322717,
+  "placebo_tiosmi_after": -0.0005800752187021397
+ },
+ "cf_sensitivity": {
+  "participants_main": 2340,
+  "events_main": 469,
+  "main": {
+   "TEZ/IVA:Triple": {
+    "est": -0.0023939157288847433,
+    "direct": 0.3222141195267745,
+    "d": {
+     "VX17-445-103": 0.3222141195267744
+    },
+    "eta": {
+     "EVOLVE": 0.2995346563617441,
+     "VX17-445-102": 0.3782512241114813,
+     "VX17-445-103": 0.3222141195267745
+    },
+    "se": 0.03487894006221158
+   },
+   "Placebo:Triple": {
+    "est": -0.0651608756921421,
+    "direct": 0.8201823191537844,
+    "d": {
+     "VX17-445-102": 0.8201823191537844
+    },
+    "eta": {
+     "EVOLVE": 0.031219153066743242,
+     "VX17-445-102": 0.8201823191537843,
+     "VX17-445-103": 0.1485985277794722
+    },
+    "se": 0.03187110198792441
+   },
+   "Placebo:TEZ/IVA": {
+    "est": -0.06276695996325737,
+    "direct": 0.857603561319441,
+    "d": {
+     "EVOLVE": 0.857603561319441
+    },
+    "eta": {
+     "EVOLVE": 0.8576035613194413,
+     "VX17-445-102": 0.02985691585154336,
+     "VX17-445-103": 0.11253952282901565
+    },
+    "se": 0.02812200849100053
+   }
+  },
+  "with_expand": {
+   "TEZ/IVA:Triple": {
+    "est": -0.0027651350193723823,
+    "direct": 0.2797638782433165,
+    "d": {
+     "VX17-445-103": 0.2797638782433165
+    },
+    "eta": {
+     "STRIVE": 0.0046794598137079035,
+     "EVOLVE": 0.13381139032826886,
+     "EXPAND": 0.08830841075233278,
+     "VX17-445-102": 0.49192402345272135,
+     "VX17-445-103": 0.2797638782433165
+    },
+    "se": 0.032547482946734964
+   },
+   "Placebo:Triple": {
+    "est": -0.06506239061916554,
+    "direct": 0.8089202020768926,
+    "d": {
+     "VX17-445-102": 0.8089202020768926
+    },
+    "eta": {
+     "EVOLVE": 0.01227775367336449,
+     "EXPAND": 0.008102665339950358,
+     "VX17-445-102": 0.8089202020768927,
+     "VX17-445-103": 0.17013120978910573
+    },
+    "se": 0.03128642625985278
+   },
+   "Placebo:TEZ/IVA": {
+    "est": -0.06229725559979316,
+    "direct": 0.8370095416149481,
+    "d": {
+     "EVOLVE": 0.5341129582992477,
+     "EXPAND": 0.3028965833157004
+    },
+    "eta": {
+     "STRIVE": 0.01867823148844433,
+     "ENVISION": 0.006038544718151682,
+     "EVOLVE": 0.5341129582992478,
+     "EXPAND": 0.3524861851739474,
+     "VX17-445-102": 0.01859479877465158,
+     "VX17-445-103": 0.07008928154555764
+    },
+    "se": 0.020391798715750958
+   }
+  },
+  "with_expand_Q": {
+   "Q_inc": 0.5081307159401369,
+   "df_inc": 3,
+   "Q_het": 0.7548468311462484,
+   "df_het": 3
+  },
+  "with_expand_TW": {
+   "t": 3.6326460617889778,
+   "df": 3,
+   "chi2_p": 0.30396146421976217,
+   "p_bb": 0.325
+  },
+  "exposure_weights": {
+   "TEZ/IVA:Triple": {
+    "est": -0.008231629194037278,
+    "direct": 0.11958372265381656,
+    "d": {
+     "VX17-445-103": 0.11958372265381662
+    },
+    "eta": {
+     "EVOLVE": 0.38908332954066677,
+     "VX17-445-102": 0.4913329478055165,
+     "VX17-445-103": 0.11958372265381662
+    },
+    "est_rate_per_py": -0.005774969785619536
+   },
+   "Placebo:Triple": {
+    "est": -0.0684187220530966,
+    "direct": 0.9332640428478194,
+    "d": {
+     "VX17-445-102": 0.9332640428478194
+    },
+    "eta": {
+     "VX17-445-102": 0.9332640428478196,
+     "VX17-445-103": 0.06295691279583335
+    },
+    "est_rate_per_py": -0.12175479890955468
+   },
+   "Placebo:TEZ/IVA": {
+    "est": -0.060187092859059356,
+    "direct": 0.9471522344983634,
+    "d": {
+     "EVOLVE": 0.9471522344983634
+    },
+    "eta": {
+     "EVOLVE": 0.9471522344983635,
+     "VX17-445-103": 0.049124133665436685
+    },
+    "est_rate_per_py": -0.11597982912393515
+   }
+  },
+  "weeks": {
+   "STRIVE": 52,
+   "ENVISION": 52,
+   "TRAFFIC": 28,
+   "TRANSPORT": 28,
+   "EVOLVE": 28,
+   "EXPAND": 8,
+   "VX17-445-102": 28,
+   "VX17-445-103": 8
+  }
+ },
+ "registry": {
+  "n_trials_history": 19,
+  "anticipated_over_realized": [
+   0.47904191616766467,
+   1.3852813852813852
+  ],
+  "realized_over_anticipated": [
+   0.721875,
+   2.0875
+  ],
+  "direct_rows": 19,
+  "direct_rows_trials": 15,
+  "corr_all": 0.9982028379525179,
+  "mad_all": 0.009105263157894745,
+  "nontrivial_rows": 13,
+  "corr_nontrivial": 0.9943965235645086,
+  "mad_nontrivial": 0.013307692307692319,
+  "max_abs_nontrivial": 0.03700000000000003,
+  "max_abs_actual_vs_pub": 0.010000000000000009,
+  "n_first_record_before_start": 15,
+  "max_days_after_start": 16,
+  "n_same_month": 2
+ },
+ "q2": {
+  "COPD": {
+   "pairs": 82,
+   "frac_pairs_nonsig": 0.9512195121951219,
+   "share_weight_nonsig": 0.850124720433202,
+   "spearman_p_d": -0.3587545608266765
+  },
+  "Cystic fibrosis": {
+   "pairs": 11,
+   "frac_pairs_nonsig": 0.7272727272727273,
+   "share_weight_nonsig": 0.7057467313271484,
+   "spearman_p_d": -0.5596565806059
+  },
+  "NMOSD": {
+   "pairs": 6,
+   "frac_pairs_nonsig": 0.16666666666666666,
+   "share_weight_nonsig": 0.10112958497271227,
+   "spearman_p_d": -0.8857142857142858
+  },
+  "SMA": {
+   "pairs": 2,
+   "frac_pairs_nonsig": 0.5,
+   "share_weight_nonsig": 0.4999999999999999,
+   "spearman_p_d": null
+  },
+  "all": {
+   "pairs": 101,
+   "frac_pairs_nonsig": 0.8712871287128713,
+   "share_weight_nonsig": 0.5751270131096026,
+   "spearman_p_d": -0.5392708972075525
+  },
+  "COPD_Placebo:TIO-HH_p_range": [
+   0.1229002871147304,
+   1.0
+  ]
+ },
+ "moment_copd": {
+  "Q_het": 1.2189067336107857,
+  "E0_het": 0.8955831418643644,
+  "E0_net": 1.1296720496110277,
+  "E0_inc": 0.23408890774666335,
+  "trace": 15688.363268827974,
+  "sigma2": 2.0609134694684807e-05,
+  "tau": 0.0064201455894216,
+  "se_common": 0.0035763607223847855,
+  "se_re": 0.004634110001561469
+ }
+}

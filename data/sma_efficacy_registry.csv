@@ -1,0 +1,9 @@
+study,treatment,events,n,outcome,source
+CHERISH,Nusinersen,48,84,HFMSE >=3-point improvement at month 15,NCT02292537 posted results (56.8% of 84)
+CHERISH,Control,11,42,HFMSE >=3-point improvement at month 15,NCT02292537 posted results (26.3% of 42)
+SUNFISH,Risdiplam,44,115,MFM32 >=3-point improvement at month 12,NCT02908685 posted results (38.3% of 115)
+SUNFISH,Control,14,59,MFM32 >=3-point improvement at month 12,NCT02908685 posted results (23.7% of 59)
+ENDEAR,Nusinersen,37,73,HINE-2 motor-milestone responder,NCT02193074 posted results (51% of 73)
+ENDEAR,Control,0,37,HINE-2 motor-milestone responder,NCT02193074 posted results (0% of 37)
+STR1VE,Onasemnogene,13,22,independent sitting >=30 s by 18 months,NCT03306277 posted results (count)
+FIREFISH,Risdiplam-infant,12,41,sitting without support >=5 s at 12 months,NCT02913482 posted results (29.3% of 41)

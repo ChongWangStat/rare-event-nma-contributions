@@ -1,0 +1,13 @@
+target,study,d_published,d_registry
+Control:Eculizumab,PREVENT,1.0,1.0
+Control:Inebilizumab,N-MOmentum,1.0,1.0
+Control:Satralizumab,SAkuraStar,0.5056,0.4997
+Control:Satralizumab,SAkuraSky,0.4944,0.5003
+Control:Tocilizumab,TANGO,1.0,1.0
+Control:Rituximab,RIN-1,1.0,1.0
+Eculizumab:Inebilizumab (throughput),N-MOmentum,1.0,1.0
+Eculizumab:Inebilizumab (throughput),PREVENT,1.0,1.0
+Eculizumab:Inebilizumab (throughput),TANGO,0.0,0.0
+Eculizumab:Inebilizumab (throughput),SAkuraStar,0.0,0.0
+Eculizumab:Inebilizumab (throughput),RIN-1,0.0,0.0
+Eculizumab:Inebilizumab (throughput),SAkuraSky,0.0,0.0

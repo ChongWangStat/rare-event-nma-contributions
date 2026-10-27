@@ -1,0 +1,86 @@
+{
+ "COPD": {
+  "pairs": 82,
+  "spearman_p_d": -0.3587545608266765,
+  "spearman_n_d": 0.9549028892374481,
+  "share_weight_from_nonsig": 0.8501247204332023,
+  "frac_pairs_nonsig": 0.9512195121951219,
+  "smallest_with_weight_1": [],
+  "largest_trial": [
+   {
+    "study": "12",
+    "n_pair": 7376,
+    "d": 0.5120820268793356,
+    "target": "LABA:TIO-HH"
+   }
+  ]
+ },
+ "Cystic fibrosis": {
+  "pairs": 11,
+  "spearman_p_d": -0.5596565806059,
+  "spearman_n_d": 0.8063802242134231,
+  "share_weight_from_nonsig": 0.7057467313271484,
+  "frac_pairs_nonsig": 0.7272727272727273,
+  "smallest_with_weight_1": [],
+  "largest_trial": [
+   {
+    "study": "EVOLVE",
+    "n_pair": 509,
+    "d": 0.857603561319441,
+    "target": "Placebo:TEZ/IVA"
+   }
+  ]
+ },
+ "NMOSD": {
+  "pairs": 6,
+  "spearman_p_d": -0.8857142857142858,
+  "spearman_n_d": 0.6571428571428573,
+  "share_weight_from_nonsig": 0.10112958497271227,
+  "frac_pairs_nonsig": 0.16666666666666666,
+  "smallest_with_weight_1": [
+   {
+    "study": "RIN-1",
+    "n_pair": 38,
+    "target": "Control:Rituximab"
+   }
+  ],
+  "largest_trial": [
+   {
+    "study": "N-MOmentum",
+    "n_pair": 230,
+    "d": 0.9999999999999997,
+    "target": "Control:Inebilizumab"
+   }
+  ]
+ },
+ "SMA": {
+  "pairs": 2,
+  "spearman_p_d": null,
+  "spearman_n_d": null,
+  "share_weight_from_nonsig": 0.49999999999999994,
+  "frac_pairs_nonsig": 0.5,
+  "smallest_with_weight_1": [
+   {
+    "study": "CHERISH",
+    "n_pair": 126,
+    "target": "Control:Nusinersen"
+   }
+  ],
+  "largest_trial": [
+   {
+    "study": "SUNFISH",
+    "n_pair": 174,
+    "d": 0.9999999999999997,
+    "target": "Control:Risdiplam"
+   }
+  ]
+ },
+ "all": {
+  "pairs": 101,
+  "spearman_p_d": -0.5392708972075525,
+  "spearman_n_d": 0.2650921693255585,
+  "share_weight_from_nonsig": 0.5751270131096027
+ },
+ "within_target_spearman_n_d_mean": 0.9941130298273155,
+ "within_target_count": 7
+}

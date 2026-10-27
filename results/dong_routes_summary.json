@@ -1,0 +1,19 @@
+{
+ "n_unique": 1,
+ "n_targets": 15,
+ "widest": 0.30541960177343247,
+ "widest_target": "TIO-HH:TIO-SMI",
+ "pt_routes": 43,
+ "pt_width": 0.013139587720481604,
+ "top_route": {
+  "weight": 0.07501764938101145,
+  "studies": "36/12",
+  "path": "Placebo\u2192LABA\u2192TIO-HH",
+  "lower": 0.07152336916768431,
+  "upper": 0.07501764938101145
+ },
+ "top3_share": 0.3866092575433354,
+ "se_total": 0.0035763607223847846,
+ "largest_cov_study": "13",
+ "largest_cov": 9.63732557183235e-10
+}

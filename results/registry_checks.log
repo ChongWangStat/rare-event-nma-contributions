@@ -1,0 +1,134 @@
+
+=== NMOSD: registry enrolment and allocation ratio vs published arm sizes ===
+                                  target       study  d_published  d_registry
+0                     Control:Eculizumab     PREVENT       1.0000      1.0000
+1                   Control:Inebilizumab  N-MOmentum       1.0000      1.0000
+2                   Control:Satralizumab  SAkuraStar       0.5056      0.4997
+3                   Control:Satralizumab   SAkuraSky       0.4944      0.5003
+4                    Control:Tocilizumab       TANGO       1.0000      1.0000
+5                      Control:Rituximab       RIN-1       1.0000      1.0000
+6   Eculizumab:Inebilizumab (throughput)  N-MOmentum       1.0000      1.0000
+7   Eculizumab:Inebilizumab (throughput)     PREVENT       1.0000      1.0000
+8   Eculizumab:Inebilizumab (throughput)       TANGO       0.0000      0.0000
+9   Eculizumab:Inebilizumab (throughput)  SAkuraStar       0.0000      0.0000
+10  Eculizumab:Inebilizumab (throughput)       RIN-1       0.0000      0.0000
+11  Eculizumab:Inebilizumab (throughput)   SAkuraSky       0.0000      0.0000
+max abs diff 0.005900000000000072
+
+=== Registration history: anticipated vs realized direct weights ===
+   network                     target         study  d_pub  d_anticipated  d_actual  W_pub  W_anticipated  W_actual
+0    nmosd         Control:Eculizumab       PREVENT  1.000          1.000     1.000  1.000          1.000     1.000
+1    nmosd       Control:Inebilizumab    N-MOmentum  1.000          1.000     1.000  1.000          1.000     1.000
+2    nmosd          Control:Rituximab         RIN-1  1.000          1.000     1.000  1.000          1.000     1.000
+3    nmosd       Control:Satralizumab    SAkuraStar  0.506          0.469     0.503  0.506          0.469     0.503
+4    nmosd       Control:Satralizumab     SAkuraSky  0.494          0.531     0.497  0.494          0.531     0.497
+5    nmosd        Control:Tocilizumab         TANGO  1.000          1.000     1.000  1.000          1.000     1.000
+6    nmosd    Eculizumab:Inebilizumab    N-MOmentum  0.000          0.000     0.000  1.000          1.000     1.000
+7    nmosd    Eculizumab:Inebilizumab       PREVENT  0.000          0.000     0.000  1.000          1.000     1.000
+8    nmosd       Eculizumab:Rituximab       PREVENT  0.000          0.000     0.000  1.000          1.000     1.000
+9    nmosd       Eculizumab:Rituximab         RIN-1  0.000          0.000     0.000  1.000          1.000     1.000
+10   nmosd    Eculizumab:Satralizumab       PREVENT  0.000          0.000     0.000  1.000          1.000     1.000
+11   nmosd    Eculizumab:Satralizumab    SAkuraStar  0.000          0.000     0.000  0.506          0.469     0.503
+12   nmosd    Eculizumab:Satralizumab     SAkuraSky  0.000          0.000     0.000  0.494          0.531     0.497
+13   nmosd     Eculizumab:Tocilizumab       PREVENT  0.000          0.000     0.000  1.000          1.000     1.000
+14   nmosd     Eculizumab:Tocilizumab         TANGO  0.000          0.000     0.000  1.000          1.000     1.000
+15   nmosd     Inebilizumab:Rituximab    N-MOmentum  0.000          0.000     0.000  1.000          1.000     1.000
+16   nmosd     Inebilizumab:Rituximab         RIN-1  0.000          0.000     0.000  1.000          1.000     1.000
+17   nmosd  Inebilizumab:Satralizumab    N-MOmentum  0.000          0.000     0.000  1.000          1.000     1.000
+18   nmosd  Inebilizumab:Satralizumab    SAkuraStar  0.000          0.000     0.000  0.506          0.469     0.503
+19   nmosd  Inebilizumab:Satralizumab     SAkuraSky  0.000          0.000     0.000  0.494          0.531     0.497
+20   nmosd   Inebilizumab:Tocilizumab    N-MOmentum  0.000          0.000     0.000  1.000          1.000     1.000
+21   nmosd   Inebilizumab:Tocilizumab         TANGO  0.000          0.000     0.000  1.000          1.000     1.000
+22   nmosd     Rituximab:Satralizumab    SAkuraStar  0.000          0.000     0.000  0.506          0.469     0.503
+23   nmosd     Rituximab:Satralizumab         RIN-1  0.000          0.000     0.000  1.000          1.000     1.000
+24   nmosd     Rituximab:Satralizumab     SAkuraSky  0.000          0.000     0.000  0.494          0.531     0.497
+25   nmosd      Rituximab:Tocilizumab         TANGO  0.000          0.000     0.000  1.000          1.000     1.000
+26   nmosd      Rituximab:Tocilizumab         RIN-1  0.000          0.000     0.000  1.000          1.000     1.000
+27   nmosd   Satralizumab:Tocilizumab         TANGO  0.000          0.000     0.000  1.000          1.000     1.000
+28   nmosd   Satralizumab:Tocilizumab    SAkuraStar  0.000          0.000     0.000  0.506          0.469     0.503
+29   nmosd   Satralizumab:Tocilizumab     SAkuraSky  0.000          0.000     0.000  0.494          0.531     0.497
+30      cf          Placebo:Ivacaftor        STRIVE  0.756          0.727     0.764  0.756          0.727     0.764
+31      cf          Placebo:Ivacaftor      ENVISION  0.244          0.273     0.236  0.244          0.273     0.236
+32      cf        Placebo:LUM/IVA bid       TRAFFIC  0.495          0.500     0.497  0.496          0.500     0.497
+33      cf        Placebo:LUM/IVA bid     TRANSPORT  0.504          0.500     0.503  0.505          0.500     0.503
+34      cf         Placebo:LUM/IVA qd       TRAFFIC  0.496          0.500     0.497  0.497          0.500     0.497
+35      cf         Placebo:LUM/IVA qd     TRANSPORT  0.503          0.500     0.503  0.504          0.500     0.503
+36      cf            Placebo:TEZ/IVA        EVOLVE  0.858          0.862     0.853  0.858          0.862     0.853
+37      cf            Placebo:TEZ/IVA  VX17-445-102  0.000          0.000     0.000  0.142          0.138     0.147
+38      cf            Placebo:TEZ/IVA  VX17-445-103  0.000          0.000     0.000  0.142          0.138     0.147
+39      cf             Placebo:Triple        EVOLVE  0.000          0.000     0.000  0.180          0.187     0.185
+40      cf             Placebo:Triple  VX17-445-102  0.820          0.813     0.815  0.820          0.813     0.815
+41      cf             Placebo:Triple  VX17-445-103  0.000          0.000     0.000  0.180          0.187     0.185
+42      cf      Ivacaftor:LUM/IVA bid        STRIVE  0.000          0.000     0.000  0.756          0.727     0.764
+43      cf      Ivacaftor:LUM/IVA bid      ENVISION  0.000          0.000     0.000  0.244          0.273     0.236
+44      cf      Ivacaftor:LUM/IVA bid       TRAFFIC  0.000          0.000     0.000  0.496          0.500     0.497
+45      cf      Ivacaftor:LUM/IVA bid     TRANSPORT  0.000          0.000     0.000  0.505          0.500     0.503
+46      cf       Ivacaftor:LUM/IVA qd        STRIVE  0.000          0.000     0.000  0.756          0.727     0.764
+47      cf       Ivacaftor:LUM/IVA qd      ENVISION  0.000          0.000     0.000  0.244          0.273     0.236
+48      cf       Ivacaftor:LUM/IVA qd       TRAFFIC  0.000          0.000     0.000  0.497          0.500     0.497
+49      cf       Ivacaftor:LUM/IVA qd     TRANSPORT  0.000          0.000     0.000  0.504          0.500     0.503
+50      cf          Ivacaftor:TEZ/IVA        STRIVE  0.000          0.000     0.000  0.756          0.727     0.764
+51      cf          Ivacaftor:TEZ/IVA      ENVISION  0.000          0.000     0.000  0.244          0.273     0.236
+52      cf          Ivacaftor:TEZ/IVA        EVOLVE  0.000          0.000     0.000  0.858          0.862     0.853
+53      cf          Ivacaftor:TEZ/IVA  VX17-445-102  0.000          0.000     0.000  0.142          0.138     0.147
+54      cf          Ivacaftor:TEZ/IVA  VX17-445-103  0.000          0.000     0.000  0.142          0.138     0.147
+55      cf           Ivacaftor:Triple        STRIVE  0.000          0.000     0.000  0.756          0.727     0.764
+56      cf           Ivacaftor:Triple      ENVISION  0.000          0.000     0.000  0.244          0.273     0.236
+57      cf           Ivacaftor:Triple        EVOLVE  0.000          0.000     0.000  0.180          0.187     0.185
+58      cf           Ivacaftor:Triple  VX17-445-102  0.000          0.000     0.000  0.820          0.813     0.815
+59      cf           Ivacaftor:Triple  VX17-445-103  0.000          0.000     0.000  0.180          0.187     0.185
+60      cf     LUM/IVA bid:LUM/IVA qd       TRAFFIC  0.494          0.500     0.497  0.495          0.500     0.497
+61      cf     LUM/IVA bid:LUM/IVA qd     TRANSPORT  0.505          0.500     0.503  0.506          0.500     0.503
+62      cf        LUM/IVA bid:TEZ/IVA       TRAFFIC  0.000          0.000     0.000  0.496          0.500     0.497
+63      cf        LUM/IVA bid:TEZ/IVA     TRANSPORT  0.000          0.000     0.000  0.505          0.500     0.503
+64      cf        LUM/IVA bid:TEZ/IVA        EVOLVE  0.000          0.000     0.000  0.858          0.862     0.853
+65      cf        LUM/IVA bid:TEZ/IVA  VX17-445-102  0.000          0.000     0.000  0.142          0.138     0.147
+66      cf        LUM/IVA bid:TEZ/IVA  VX17-445-103  0.000          0.000     0.000  0.142          0.138     0.147
+67      cf         LUM/IVA bid:Triple       TRAFFIC  0.000          0.000     0.000  0.496          0.500     0.497
+68      cf         LUM/IVA bid:Triple     TRANSPORT  0.000          0.000     0.000  0.505          0.500     0.503
+69      cf         LUM/IVA bid:Triple        EVOLVE  0.000          0.000     0.000  0.180          0.187     0.185
+70      cf         LUM/IVA bid:Triple  VX17-445-102  0.000          0.000     0.000  0.820          0.813     0.815
+71      cf         LUM/IVA bid:Triple  VX17-445-103  0.000          0.000     0.000  0.180          0.187     0.185
+72      cf         LUM/IVA qd:TEZ/IVA       TRAFFIC  0.000          0.000     0.000  0.497          0.500     0.497
+73      cf         LUM/IVA qd:TEZ/IVA     TRANSPORT  0.000          0.000     0.000  0.504          0.500     0.503
+74      cf         LUM/IVA qd:TEZ/IVA        EVOLVE  0.000          0.000     0.000  0.858          0.862     0.853
+75      cf         LUM/IVA qd:TEZ/IVA  VX17-445-102  0.000          0.000     0.000  0.142          0.138     0.147
+76      cf         LUM/IVA qd:TEZ/IVA  VX17-445-103  0.000          0.000     0.000  0.142          0.138     0.147
+77      cf          LUM/IVA qd:Triple       TRAFFIC  0.000          0.000     0.000  0.497          0.500     0.497
+78      cf          LUM/IVA qd:Triple     TRANSPORT  0.000          0.000     0.000  0.504          0.500     0.503
+79      cf          LUM/IVA qd:Triple        EVOLVE  0.000          0.000     0.000  0.180          0.187     0.185
+80      cf          LUM/IVA qd:Triple  VX17-445-102  0.000          0.000     0.000  0.820          0.813     0.815
+81      cf          LUM/IVA qd:Triple  VX17-445-103  0.000          0.000     0.000  0.180          0.187     0.185
+82      cf             TEZ/IVA:Triple        EVOLVE  0.000          0.000     0.000  0.678          0.675     0.668
+83      cf             TEZ/IVA:Triple  VX17-445-102  0.000          0.000     0.000  0.678          0.675     0.668
+84      cf             TEZ/IVA:Triple  VX17-445-103  0.322          0.325     0.332  0.322          0.325     0.332
+85     sma         Control:Nusinersen       CHERISH  1.000          1.000     1.000  1.000          1.000     1.000
+86     sma          Control:Risdiplam       SUNFISH  1.000          1.000     1.000  1.000          1.000     1.000
+87     sma       Nusinersen:Risdiplam       CHERISH  0.000          0.000     0.000  1.000          1.000     1.000
+88     sma       Nusinersen:Risdiplam       SUNFISH  0.000          0.000     0.000  1.000          1.000     1.000
+
+max |d_anticipated - d_pub| 0.03700000000000003  mean 0.009105263157894745  corr 0.998202837952518
+max |d_actual - d_pub| 0.010000000000000009
+max |W_anticipated - W_pub| 0.03700000000000003  corr 0.99866356208553
+           study  first_enrollment  last_enrollment  ratio_actual_over_anticipated
+0        PREVENT                93              143                           1.54
+1     N-MOmentum               320              231                           0.72
+2      SAkuraSky                70               85                           1.21
+3     SAkuraStar                70               95                           1.36
+4          TANGO               118              118                           1.00
+5       CHAMPION                55               58                           1.05
+6         ENDEAR               111              122                           1.10
+7        CHERISH               117              126                           1.08
+8        SUNFISH               186              231                           1.24
+9         STR1VE                15               22                           1.47
+10      FIREFISH                48               62                           1.29
+11        STRIVE                80              167                           2.09
+12      ENVISION                30               52                           1.73
+13       TRAFFIC               501              559                           1.12
+14     TRANSPORT               501              563                           1.12
+15        EVOLVE               490              510                           1.04
+16        EXPAND               300              248                           0.83
+17  VX17-445-102               360              405                           1.12
+18  VX17-445-103               100              113                           1.13
+
+wrote to /home/claude/pkg/results

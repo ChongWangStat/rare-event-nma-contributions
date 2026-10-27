@@ -1,0 +1,103 @@
+{
+ "A Control:Nusinersen": {
+  "est": 0.3095,
+  "se": 0.0867,
+  "pct": [
+   0.131,
+   0.476
+  ],
+  "direct": 1.0,
+  "rows": [
+   {
+    "study": "CHERISH",
+    "d": 1.0,
+    "W": 1.0,
+    "C": 0.3095
+   }
+  ]
+ },
+ "A Control:Risdiplam": {
+  "est": 0.1453,
+  "se": 0.0716,
+  "pct": [
+   0.007,
+   0.283
+  ],
+  "direct": 1.0,
+  "rows": [
+   {
+    "study": "SUNFISH",
+    "d": 1.0,
+    "W": 1.0,
+    "C": 0.1453
+   }
+  ]
+ },
+ "A Nusinersen:Risdiplam": {
+  "est": -0.1642,
+  "se": 0.1124,
+  "pct": [
+   -0.383,
+   0.058
+  ],
+  "direct": 0.0,
+  "rows": [
+   {
+    "study": "CHERISH",
+    "d": 0.0,
+    "W": 1.0,
+    "C": -0.3095
+   },
+   {
+    "study": "SUNFISH",
+    "d": 0.0,
+    "W": 1.0,
+    "C": 0.1453
+   }
+  ]
+ },
+ "B Control:Nusinersen": {
+  "est": 0.5068,
+  "se": 0.0585,
+  "borrowed_share": 0.0,
+  "currents": {
+   "Nusinersen": -1.0,
+   "Control": 1.0,
+   "Onasemnogene": 0.0,
+   "Risdiplam-infant": 0.0
+  }
+ },
+ "B Control:Onasemnogene": {
+  "est": 0.5909,
+  "se": 0.1048,
+  "borrowed_share": 1.0,
+  "currents": {
+   "Nusinersen": -0.0,
+   "Control": 1.0,
+   "Onasemnogene": -1.0,
+   "Risdiplam-infant": 0.0
+  }
+ },
+ "B Control:Risdiplam-infant": {
+  "est": 0.2927,
+  "se": 0.0711,
+  "borrowed_share": 1.0,
+  "currents": {
+   "Nusinersen": -0.0,
+   "Control": 1.0,
+   "Onasemnogene": 0.0,
+   "Risdiplam-infant": -1.0
+  }
+ },
+ "B Nusinersen:Onasemnogene": {
+  "est": 0.0841,
+  "se": 0.12,
+  "borrowed_share": 1.0,
+  "currents": {
+   "Nusinersen": 1.0,
+   "Control": -0.0,
+   "Onasemnogene": -1.0,
+   "Risdiplam-infant": 0.0
+  }
+ }
+}

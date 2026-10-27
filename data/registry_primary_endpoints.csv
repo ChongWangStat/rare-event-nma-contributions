@@ -1,0 +1,12 @@
+nct,study,outcome,comparison,estimate,method,p_value
+NCT00909532,STRIVE,Absolute Mean Change From Baseline in Percent Predicted Forced Expiratory Volume in 1 Second (FEV1) Through Week 24,Placebo vs 150 mg Ivacaftor q12h,10.6,Mixed Models Analysis,<0.0001
+NCT00909727,ENVISION,Absolute Change From Baseline in Percent Predicted Forced Expiratory Volume in 1 Second (FEV1) Through Week 24,Placebo vs 150 mg Ivacaftor q12h,12.5,Mixed Models Analysis,<0.0001
+NCT01807923,TRAFFIC,Absolute Change From Baseline in Percent Predicted Forced Expiratory Volume in 1 Second (FEV1) at Week 24,Placebo vs LUM 600 mg qd/IVA 250 mg q12h,4.03,MMRM,<0.0001
+NCT01807923,TRAFFIC,Absolute Change From Baseline in Percent Predicted Forced Expiratory Volume in 1 Second (FEV1) at Week 24,Placebo vs LUM 400 mg q12h/ IVA 250 mg q12h,2.60,MMRM,0.0003
+NCT01807949,TRANSPORT,Absolute Change From Baseline in Percent Predicted Forced Expiratory Volume in 1 Second (FEV1) at Week 24,Placebo vs LUM 600 mg qd/IVA 250 mg q12h,2.62,MMRM,0.0004
+NCT01807949,TRANSPORT,Absolute Change From Baseline in Percent Predicted Forced Expiratory Volume in 1 Second (FEV1) at Week 24,Placebo vs LUM 400 mg q12h/ IVA 250 mg q12h,3.00,MMRM,<0.0001
+NCT02347657,EVOLVE,Absolute Change From Baseline (Day 1) in Percent Predicted Forced Expiratory Volume in 1 Second (ppFEV1) Through Week 24,Placebo vs VX-661/IVA,4.0,Mixed model for repeated measures (MMRM),<0.0001
+NCT02392234,EXPAND,Absolute Change From Study Baseline in Percent Predicted Forced Expiratory Volume in 1 Second (ppFEV1) at Average of Week 4 and Week 8,Placebo vs Ivacaftor,4.7,Linear Mixed Effects Model,< 0.0001
+NCT02392234,EXPAND,Absolute Change From Study Baseline in Percent Predicted Forced Expiratory Volume in 1 Second (ppFEV1) at Average of Week 4 and Week 8,Placebo vs VX-661/IVA,6.8,Linear Mixed Effects Model,< 0.0001
+NCT03525444,VX17-445-102,Absolute Change in Percent Predicted Forced Expiratory Volume in 1 Second (ppFEV1),Placebo vs VX-445/TEZ/IVA TC,13.8,Mixed-effects model for repeated measure,<0.0001
+NCT03525548,VX17-445-103,Absolute Change in Percent Predicted Forced Expiratory Volume in 1 Second (ppFEV1),TEZ/IVA vs VX-445/TEZ/IVA TC,10,Mixed-effects model for repeated measure,<0.0001

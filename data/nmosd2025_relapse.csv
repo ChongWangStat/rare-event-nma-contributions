@@ -1,0 +1,14 @@
+study,treatment,events,n
+N-MOmentum,Inebilizumab,21,174
+N-MOmentum,Control,22,56
+PREVENT,Eculizumab,3,96
+PREVENT,Control,20,47
+TANGO,Tocilizumab,8,59
+TANGO,Control,28,59
+SAkuraStar,Satralizumab,19,63
+SAkuraStar,Control,16,32
+RIN-1,Rituximab,0,19
+RIN-1,Control,7,19
+SAkuraSky,Satralizumab,8,41
+SAkuraSky,Control,18,42
+CHAMPION,Ravulizumab,0,58

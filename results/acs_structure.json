@@ -1,0 +1,717 @@
+{
+ "He2024_HIV_PrEP": {
+  "pmc": "11694715",
+  "title": "Generalizing the intention-to-treat effect of an active control from historical placebo-controlled trials",
+  "abstract_words": 229,
+  "body_words": 12358,
+  "sections": [
+   [
+    "Introduction",
+    1683
+   ],
+   [
+    "Notation and framework",
+    1293
+   ],
+   [
+    "Identification assumptions; a road map for estimation and sensitivity analysis",
+    2005
+   ],
+   [
+    "Estimation and inference",
+    3081
+   ],
+   [
+    "Simulation study",
+    1817
+   ],
+   [
+    "Case study: Efficacy of daily TDF/FTC in HIV-1 prevention",
+    1855
+   ],
+   [
+    "Discussion",
+    620
+   ],
+   [
+    "Supplementary Material",
+    4
+   ]
+  ],
+  "figures": 0,
+  "tables": 0,
+  "theorem_mentions": 2,
+  "keywords": [
+   "Active-controlled trial",
+   "Compliance",
+   "Generalizability",
+   "HIV prevention",
+   "Intention-to-treat effect",
+   "Post-randomization event"
+  ],
+  "supp_statement": false
+ },
+ "Sun2025_recurrent_events_EHR": {
+  "pmc": "12363995",
+  "title": "Global and Episode-Specific Prediction of Recurrent Events Using Longitudinal Health Informatics Data",
+  "abstract_words": 172,
+  "body_words": 11548,
+  "sections": [
+   [
+    "Introduction",
+    975
+   ],
+   [
+    "Data Structure and Model Setup",
+    2569
+   ],
+   [
+    "Episode-specific prediction",
+    2780
+   ],
+   [
+    "Global prediction",
+    2252
+   ],
+   [
+    "Simulation",
+    1524
+   ],
+   [
+    "Data application",
+    1191
+   ],
+   [
+    "Discussion",
+    226
+   ],
+   [
+    "Supplementary Material",
+    31
+   ]
+  ],
+  "figures": 0,
+  "tables": 1,
+  "theorem_mentions": 0,
+  "keywords": [
+   "Dynamic risk prediction",
+   "Ensemble",
+   "Gap time",
+   "Medical records",
+   "Random forest"
+  ],
+  "supp_statement": true
+ },
+ "Prostate_biopsy_2026": {
+  "pmc": "13496293",
+  "title": "Optimizing Sequential Decision Rules for Prostate Cancer Biopsy Management: A Multi-Objective Statistical Framework",
+  "abstract_words": 197,
+  "body_words": 9673,
+  "sections": [
+   [
+    "Introduction",
+    1267
+   ],
+   [
+    "The Prostate MRI (pMRI) Data and Motivation",
+    619
+   ],
+   [
+    "Trackable Pareto Optimality via Lagrangian Duality",
+    2346
+   ],
+   [
+    "Plug-in Estimation of the Optimal Rule",
+    2084
+   ],
+   [
+    "Performance Guarantee of the Estimated Rules",
+    1205
+   ],
+   [
+    "Simulation",
+    487
+   ],
+   [
+    "Efficient Detection for Clinically Significant PCa",
+    1349
+   ],
+   [
+    "Discussion",
+    278
+   ],
+   [
+    "Supplementary Material",
+    38
+   ]
+  ],
+  "figures": 0,
+  "tables": 1,
+  "theorem_mentions": 14,
+  "keywords": [
+   "Binary Classification",
+   "Diagnostic Accuracy",
+   "Neyman\u2013Pearson Classifier",
+   "Pareto Optimality"
+  ],
+  "supp_statement": false
+ },
+ "SMART_MC_MS_2026": {
+  "pmc": "13218670",
+  "title": "SMART-MC: Characterizing the Dynamics of Multiple Sclerosis Therapy Transitions Using a Covariate-Based Markov Model",
+  "abstract_words": 202,
+  "body_words": 10509,
+  "sections": [
+   [
+    "Introduction",
+    966
+   ],
+   [
+    "Covariate-driven MS-DMT Transition Dynamics",
+    888
+   ],
+   [
+    "SMART-MC",
+    3001
+   ],
+   [
+    "MSCOR",
+    4059
+   ],
+   [
+    "SMART-MC Analysis of Dynamic MS DMTs",
+    1163
+   ],
+   [
+    "Conclusion",
+    392
+   ],
+   [
+    "Supplementary Material",
+    40
+   ]
+  ],
+  "figures": 0,
+  "tables": 1,
+  "theorem_mentions": 6,
+  "keywords": [
+   "Markov model",
+   "Global optimization",
+   "Multiple Sclerosis",
+   "EHR data modeling",
+   "Dynamic treatment modeling"
+  ],
+  "supp_statement": false
+ },
+ "Alcohol_brain_2025": {
+  "pmc": "12536561",
+  "title": "The Effect of Alcohol Intake on Brain White Matter Microstructural Integrity: A New Causal Inference Framework for Incomplete Phenomic Data",
+  "abstract_words": 218,
+  "body_words": 8787,
+  "sections": [
+   [
+    "Introduction",
+    1294
+   ],
+   [
+    "Notation",
+    511
+   ],
+   [
+    "Method",
+    3578
+   ],
+   [
+    "Alcohol Intake Frequency and Brain White Matter Microstructural Integrity in the UKB",
+    1616
+   ],
+   [
+    "Simulation",
+    1174
+   ],
+   [
+    "Discussion",
+    577
+   ],
+   [
+    "Supplementary Material",
+    37
+   ]
+  ],
+  "figures": 0,
+  "tables": 1,
+  "theorem_mentions": 0,
+  "keywords": [
+   "Brain aging",
+   "Data integration",
+   "Ensemble learning",
+   "Phenomics",
+   "Robustness"
+  ],
+  "supp_statement": true
+ },
+ "WhoAreWeMissing_2025": {
+  "pmc": "12393784",
+  "title": " Who Are We Missing? : A Principled Approach to Characterizing the Underrepresented Population",
+  "abstract_words": 182,
+  "body_words": 8531,
+  "sections": [
+   [
+    "Introduction",
+    976
+   ],
+   [
+    "Relevant Literature",
+    373
+   ],
+   [
+    "Preliminaries",
+    1821
+   ],
+   [
+    "Shifting the Goalpost",
+    905
+   ],
+   [
+    "Learning w via Functional Optimization",
+    1448
+   ],
+   [
+    "Empirical Results",
+    1633
+   ],
+   [
+    "Discussion &amp; Conclusion",
+    1375
+   ]
+  ],
+  "figures": 0,
+  "tables": 0,
+  "theorem_mentions": 0,
+  "keywords": [
+   "Causal Inference",
+   "Generalizability",
+   "Data Fusion",
+   "Machine Learning",
+   "Interpretability"
+  ],
+  "supp_statement": false
+ },
+ "ImmuneProfiling_CRC_2025": {
+  "pmc": "12356147",
+  "title": "Immune Profiling among Colorectal Cancer Subtypes using Dependent Mixture Models",
+  "abstract_words": 192,
+  "body_words": 10423,
+  "sections": [
+   [
+    "Introduction",
+    1861
+   ],
+   [
+    "Immune profiling of EOCRC vs. LOCRC",
+    657
+   ],
+   [
+    "Dependent finite mixture model",
+    3335
+   ],
+   [
+    "Properties of the SASC model",
+    2137
+   ],
+   [
+    "Simulation Study",
+    878
+   ],
+   [
+    "Results",
+    1094
+   ],
+   [
+    "Discussion",
+    409
+   ],
+   [
+    "Supplementary Material",
+    52
+   ]
+  ],
+  "figures": 0,
+  "tables": 0,
+  "theorem_mentions": 8,
+  "keywords": [
+   "Finite mixture model",
+   "Early-onset colorectal cancer",
+   "Comparison across conditions",
+   "Common atoms model"
+  ],
+  "supp_statement": true
+ },
+ "StarTrail_omics_2026": {
+  "pmc": "13464541",
+  "title": "Investigating Spatial Dynamics in Spatial Omics Data with StarTrail",
+  "abstract_words": 138,
+  "body_words": 7240,
+  "sections": [
+   [
+    "Introduction",
+    973
+   ],
+   [
+    "Data Description and Scientific Motivation",
+    348
+   ],
+   [
+    "Scalable Spatial Gradient Process via StarTrail",
+    1660
+   ],
+   [
+    "Simulation",
+    651
+   ],
+   [
+    "Human Dorsolateral Prefrontal Cortex (DLPFC)",
+    1897
+   ],
+   [
+    "Human HER2+ Breast Cancer Analysis",
+    943
+   ],
+   [
+    "Human Tonsils Spatial Proteomic Dataset",
+    170
+   ],
+   [
+    "Discussion",
+    562
+   ],
+   [
+    "Supplementary Material",
+    36
+   ]
+  ],
+  "figures": 0,
+  "tables": 0,
+  "theorem_mentions": 0,
+  "keywords": [
+   "Boundary detection",
+   "Cliff gene",
+   "Gaussian Process",
+   "gradients"
+  ],
+  "supp_statement": true
+ },
+ "Brain_connectivity_adolescent_2024": {
+  "pmc": "11451334",
+  "title": "Heterogeneity Analysis on Multi-state Brain Functional Connectivity and Adolescent Neurocognition",
+  "abstract_words": 163,
+  "body_words": 9165,
+  "sections": [
+   [
+    "Introduction",
+    1024
+   ],
+   [
+    "Methods",
+    4306
+   ],
+   [
+    "Analysis of the ABCD study",
+    1486
+   ],
+   [
+    "Simulation studies",
+    1636
+   ],
+   [
+    "Discussion",
+    709
+   ],
+   [
+    "Supplementary Material",
+    4
+   ]
+  ],
+  "figures": 0,
+  "tables": 1,
+  "theorem_mentions": 0,
+  "keywords": [
+   "Bayesian modeling",
+   "Functional connectivity",
+   "Heterogeneity analysis",
+   "Stochastic block model",
+   "Variational algorithm"
+  ],
+  "supp_statement": true
+ },
+ "Tumor_pathology_shape_2024": {
+  "pmc": "11395925",
+  "title": "Bayesian Landmark-based Shape Analysis of Tumor Pathology Images",
+  "abstract_words": 204,
+  "body_words": 9338,
+  "sections": [
+   [
+    "Introduction",
+    954
+   ],
+   [
+    "The BayesLASA Model",
+    3475
+   ],
+   [
+    "Model Fitting",
+    416
+   ],
+   [
+    "Simulation",
+    1267
+   ],
+   [
+    "Applications",
+    2807
+   ],
+   [
+    "Conclusion",
+    413
+   ],
+   [
+    "Supplementary Material",
+    6
+   ]
+  ],
+  "figures": 0,
+  "tables": 0,
+  "theorem_mentions": 0,
+  "keywords": [
+   "Shape analysis",
+   "Artificial intelligence-reconstructed images",
+   "Landmark detection",
+   "Markov chain Monte Carlo",
+   "Tumor boundary roughness"
+  ],
+  "supp_statement": false
+ },
+ "SparseICA_autism_2024": {
+  "pmc": "11824601",
+  "title": "Sparse Independent Component Analysis with an Application to Cortical Surface fMRI Data in Autism",
+  "abstract_words": 177,
+  "body_words": 8803,
+  "sections": [
+   [
+    "Introduction",
+    1295
+   ],
+   [
+    "Methods",
+    3100
+   ],
+   [
+    "Simulations",
+    2269
+   ],
+   [
+    "Application to Cortical Surface fMRI Data",
+    1118
+   ],
+   [
+    "Discussion",
+    1017
+   ],
+   [
+    "Supplementary Material",
+    4
+   ]
+  ],
+  "figures": 0,
+  "tables": 1,
+  "theorem_mentions": 0,
+  "keywords": [
+   "ASD",
+   "Functional Connectivity",
+   "ICA",
+   "Neuroimaging",
+   "Sparsity"
+  ],
+  "supp_statement": false
+ },
+ "TransAncestry_genetic_2024": {
+  "pmc": "11364214",
+  "title": "Estimating trans-ancestry genetic correlation with unbalanced data resources",
+  "abstract_words": 160,
+  "body_words": 10829,
+  "sections": [
+   [
+    "Introduction",
+    685
+   ],
+   [
+    "Modeling framework",
+    2836
+   ],
+   [
+    "Estimation using genetically-predicted traits",
+    2427
+   ],
+   [
+    "Reference panels in trans-ancestry analysis",
+    1469
+   ],
+   [
+    "Simulation and real data analysis",
+    2604
+   ],
+   [
+    "Discussion",
+    804
+   ],
+   [
+    "Supplementary Material",
+    4
+   ]
+  ],
+  "figures": 0,
+  "tables": 0,
+  "theorem_mentions": 9,
+  "keywords": [
+   "Data heterogeneity",
+   "GWAS",
+   "High-dimensional prediction",
+   "Trans-ancestry genetic correlation",
+   "UK Biobank"
+  ],
+  "supp_statement": false
+ },
+ "ElasticShape_movement_2025": {
+  "pmc": "12755838",
+  "title": "Elastic Shape Analysis of Movement Data",
+  "abstract_words": 178,
+  "body_words": 6950,
+  "sections": [
+   [
+    "Introduction",
+    576
+   ],
+   [
+    "Curves as Data Objects",
+    1065
+   ],
+   [
+    "Shape-based Functional Data Analysis",
+    3280
+   ],
+   [
+    "Comparison to Conventional Discrete Summaries",
+    1906
+   ],
+   [
+    "Conclusion",
+    102
+   ],
+   [
+    "Supplementary Material",
+    21
+   ]
+  ],
+  "figures": 0,
+  "tables": 0,
+  "theorem_mentions": 0,
+  "keywords": [
+   "Functional data analysis",
+   "Biomechanical data",
+   "Nonparametric methods",
+   "Shape statistics"
+  ],
+  "supp_statement": false
+ },
+ "BCI_signal_matching_2026": {
+  "pmc": "13134665",
+  "title": "Bayesian Signal Matching for Transfer Learning in ERP-Based Brain Computer Interface",
+  "abstract_words": 223,
+  "body_words": 9725,
+  "sections": [
+   [
+    "Introduction",
+    1557
+   ],
+   [
+    "Methods",
+    1856
+   ],
+   [
+    "Posterior Inferences",
+    2282
+   ],
+   [
+    "Simulation Studies",
+    1348
+   ],
+   [
+    "Analysis of BCI Data from Real Participants",
+    1522
+   ],
+   [
+    "Discussion",
+    1080
+   ],
+   [
+    "Supplementary Material",
+    80
+   ]
+  ],
+  "figures": 0,
+  "tables": 0,
+  "theorem_mentions": 0,
+  "keywords": [
+   "Bayesian method",
+   "Brain-computer interface",
+   "Calibration-less framework",
+   "Mixture model",
+   "P300",
+   "Transfer learning"
+  ],
+  "supp_statement": true
+ },
+ "Materials_genes_2024": {
+  "pmc": "11343493",
+  "title": "Operator-induced structural variable selection for identifying materials genes",
+  "abstract_words": 236,
+  "body_words": 12046,
+  "sections": [
+   [
+    "Introduction",
+    2077
+   ],
+   [
+    "The OIS framework",
+    5156
+   ],
+   [
+    "Simulation",
+    2897
+   ],
+   [
+    "Application to single-atom catalysis",
+    1447
+   ],
+   [
+    "Discussion",
+    463
+   ],
+   [
+    "Supplementary Material",
+    6
+   ]
+  ],
+  "figures": 0,
+  "tables": 1,
+  "theorem_mentions": 1,
+  "keywords": [
+   "BART",
+   "Bayesian nonparametrics",
+   "feature engineering",
+   "materials genomes",
+   "nonparametric dimension reduction"
+  ],
+  "supp_statement": false
+ }
+}

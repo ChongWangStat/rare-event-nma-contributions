@@ -1,0 +1,5 @@
+fixed_mle_inc,fixed_mle_het,satt_mle_inc,wald_plugin_mle,wald_chi2,pearson_chi2_inc,wald_bb_mle,frac_converged,rate,delta,reps,reps_bb,time_s
+0.04,0.035,0.039,0.05,0.031,0.039,0.0275,0.708,low,0.0,1000,400,344
+0.026,0.029,0.021,0.069,0.01,0.027,0.01,0.104,verylow,0.0,1000,400,302
+0.246,0.039,0.241,0.207,0.153,0.221,0.19,0.584,low,0.06,1000,200,226
+0.44,0.018,0.433,0.405,0.116,0.236,0.125,0.127,verylow,0.06,1000,200,184

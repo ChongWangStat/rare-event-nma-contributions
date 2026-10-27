@@ -1,0 +1,32 @@
+{
+ "COPD": {
+  "targets": 10,
+  "targets_all_nonsig": 6,
+  "median_precision_gain_all_nonsig": 3.261320000919614,
+  "n_network_excludes_mid": 10,
+  "n_best_trial_excludes_mid": 2,
+  "n_network_only": 8,
+  "mid": 0.01,
+  "median_precision_gain": 3.340025889618645
+ },
+ "Cystic fibrosis": {
+  "targets": 7,
+  "targets_all_nonsig": 4,
+  "median_precision_gain_all_nonsig": 1.602897075708744,
+  "n_network_excludes_mid": 0,
+  "n_best_trial_excludes_mid": 0,
+  "n_network_only": 0,
+  "mid": 0.05,
+  "median_precision_gain": 1.9785568204176063
+ },
+ "NMOSD": {
+  "targets": 5,
+  "targets_all_nonsig": 0,
+  "median_precision_gain_all_nonsig": null,
+  "n_network_excludes_mid": 0,
+  "n_best_trial_excludes_mid": 0,
+  "n_network_only": 0,
+  "mid": 0.1,
+  "median_precision_gain": 1.0000000000000002
+ }
+}

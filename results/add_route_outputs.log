@@ -1,0 +1,43 @@
+{
+ "n_unique": 1,
+ "n_targets": 15,
+ "widest": 0.30541960177343247,
+ "widest_target": "TIO-HH:TIO-SMI",
+ "pt_routes": 43,
+ "pt_width": 0.013139587720481604,
+ "top_route": {
+  "weight": 0.07501764938101145,
+  "studies": "36/12",
+  "path": "Placebo\u2192LABA\u2192TIO-HH",
+  "lower": 0.07152336916768431,
+  "upper": 0.07501764938101145
+ },
+ "top3_share": 0.3866092575433354,
+ "se_total": 0.0035763607223847846,
+ "largest_cov_study": "13",
+ "largest_cov": 9.63732557183235e-10
+}
+\begin{tabular}{llrrr}
+\toprule
+Studies & Route & Weight & Sharp lower & Sharp upper \\
+\midrule
+3 & direct & 0.3460 & 0.3460 & 0.3460 \\
+10 & direct & 0.1056 & 0.1056 & 0.1056 \\
+8 & direct & 0.0583 & 0.0583 & 0.0583 \\
+6 & direct & 0.0469 & 0.0469 & 0.0469 \\
+11 & direct & 0.0465 & 0.0465 & 0.0465 \\
+other direct studies & direct & 0.1045 & -- & -- \\
+36/12 & Placebo$\to$LABA$\to$TIO-HH & 0.0750 & 0.0715 & 0.0750 \\
+32/12 & Placebo$\to$LABA$\to$TIO-HH & 0.0199 & 0.0165 & 0.0199 \\
+38/12 & Placebo$\to$LABA$\to$TIO-HH & 0.0180 & 0.0145 & 0.0180 \\
+15/12 & Placebo$\to$LABA$\to$TIO-HH & 0.0163 & 0.0128 & 0.0163 \\
+16/12 & Placebo$\to$LABA$\to$TIO-HH & 0.0149 & 0.0114 & 0.0149 \\
+22/36/14 & Placebo$\to$ICS$\to$LABA-ICS$\to$TIO-HH & 0.0131 & 0.0000 & 0.0131 \\
+39/12 & Placebo$\to$LABA$\to$TIO-HH & 0.0124 & 0.0089 & 0.0124 \\
+35/12 & Placebo$\to$LABA$\to$TIO-HH & 0.0122 & 0.0087 & 0.0122 \\
+other 35 routes & & 0.1102 & & \\
+\midrule
+Sum & & 1.0000 & & \\
+\bottomrule
+\end{tabular}
+
