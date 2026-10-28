@@ -13,6 +13,8 @@ m["SigRhoCOPD"] = f"{S['COPD']['spearman_p_d']:.2f}".replace("-", "$-$")
 m["SigRhoCF"] = f"{S['Cystic fibrosis']['spearman_p_d']:.2f}".replace("-", "$-$")
 m["SigRhoAll"] = f"{S['all']['spearman_p_d']:.2f}".replace("-", "$-$")
 m["SigRhoSize"] = f"{S['all']['spearman_n_d']:.2f}"
+m["SigRhoSizeCOPD"] = f"{S['COPD']['spearman_n_d']:.2f}"
+m["SigRhoSizeCF"] = f"{S['Cystic fibrosis']['spearman_n_d']:.2f}"
 m["InfGainCOPD"] = f"{I['COPD']['median_precision_gain']:.1f}"
 m["InfGainCF"] = f"{I['Cystic fibrosis']['median_precision_gain']:.1f}"
 m["TauDong"] = f"{R['moment_copd']['tau']:.4f}"
@@ -79,11 +81,24 @@ _th = mover_interval(_d.coefficient_vector("Placebo", "TIO-HH"), _d.r, _d.n)
 m["PlaHhLo"], m["PlaHhHi"] = f"{_th[0]:.3f}", f"{_th[1]:.3f}"
 _ts = mover_interval(_d.coefficient_vector("Placebo", "TIO-SMI"), _d.r, _d.n)
 m["PlaSmiLo"], m["PlaSmiHi"] = f"{_ts[0]:.3f}", f"{_ts[1]:.3f}"
+# nuisance-free e-value intervals quoted in the applications
+from rdcsp import emixture_interval
+_e = emixture_interval(_d.coefficient_vector("Placebo", "TIO-HH"), _d.r, _d.n)
+m["EmixPlaHhLo"], m["EmixPlaHhHi"] = f"{_e[0]:.3f}", f"{_e[1]:.3f}"
+_g = Network(pd.read_csv("../data/gurusamy2011_liver_transplant_mortality.csv"))
+_e = emixture_interval(_g.coefficient_vector("Control/Placebo", "Aprotinin"), _g.r, _g.n)
+m["EmixGurLo"], m["EmixGurHi"] = f"{_e[0]:.3f}", f"{_e[1]:.3f}"
 # interval coverage
 C = pd.read_csv(f"{OUT}/interval_coverage.csv")
 m["MoverCovMin"] = f"{C.cov_mover.min():.3f}"
 m["MoverCovMax"] = f"{C.cov_mover.max():.3f}"
 m["BasicCovMin"] = f"{min(C.cov_basic.min(), C.cov_normal.min()):.2f}"
+_lp = C.dropna(subset=["width_lp"])
+_gain = 1 - _lp.width_emix / _lp.width_lp
+m["EmixNarrowMin"] = f"{100 * _gain[_gain > 0.05].min():.0f}"
+m["EmixNarrowMax"] = f"{100 * _gain.max():.0f}"
+m["EmixLpTies"] = ["none", "one", "two", "three", "four", "five"][int((_gain.abs() <= 0.05).sum())]
+m["EmixCovMin"] = f"{C.cov_emix.min():.3f}"
 # misspecification
 if os.path.exists(f"{OUT}/sim_misspec_logit.csv"):
     ML = pd.read_csv(f"{OUT}/sim_misspec_logit.csv").iloc[0]

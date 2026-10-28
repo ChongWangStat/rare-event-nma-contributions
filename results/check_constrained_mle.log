@@ -1,0 +1,6 @@
+dong2013_copd_mortality.csv                      SLSQP status 8  -loglik SLSQP 8378.4175  barrier 8378.4175  max |fitted risk difference| 0.00e+00
+gurusamy2011_liver_transplant_mortality.csv      SLSQP status 8  -loglik SLSQP 171.2339  barrier 171.2339  max |fitted risk difference| 2.84e-08
+cf_sae_registry.csv                              SLSQP status 0  -loglik SLSQP 1129.3377  barrier 1129.3377  max |fitted risk difference| 1.74e-08
+covid19_wholenetwork.csv                         SLSQP status 0  -loglik SLSQP 9206.8007  barrier 9206.8007  max |fitted risk difference| 5.72e-09
+synthetic low     : SLSQP reports success in 125/200, interior-point fallback used in 1/200; max |fitted risk difference| 4.58e-07; max excess -loglik 6.85e-07
+synthetic verylow : SLSQP reports success in 12/200, interior-point fallback used in 33/200; max |fitted risk difference| 1.66e-05; max excess -loglik 8.26e-06

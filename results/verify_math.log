@@ -130,5 +130,17 @@
    "het": 0.2426281015547229,
    "inc": 0.6106542298884704
   }
+ },
+ "identities_all_targets": {
+  "n_targets": 77,
+  "max_abs": {
+   "contributions_sum_minus_estimate": 2.7755575615628914e-17,
+   "estimate_minus_wls": 1.9567680809018384e-15,
+   "direct_plus_indirect_minus_total": 2.7755575615628914e-17,
+   "weights_sum_direct_plus_q": 0.0,
+   "Q_additivity": 1.1102230246251565e-15,
+   "study_current_conservation": 5.551115123125783e-16,
+   "laplacian_rowsum": 4.547473508864641e-13
+  }
  }
 }

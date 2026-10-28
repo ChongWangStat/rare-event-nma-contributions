@@ -1,0 +1,14 @@
+\begin{tabular}{lrrrrrrrrrr}
+\toprule
+ & & \multicolumn{4}{c}{$Q_{\mathrm{inc}}$} & \multicolumn{4}{c}{$T_W$} & \\
+\cmidrule(lr){3-6}\cmidrule(lr){7-10}
+Network & df & value & plug-in & two-moment & BB sup & value & $\chi^2$ & plug-in & BB sup & Hoeffding \\
+\midrule
+COPD & 10 & 0.362 & 0.149 & 0.155 & 0.660 & 14.64 & 0.146 & 0.135 & 0.151 & 1.000 \\
+Liver transplant & 2 & 0.082 & 0.466 & 0.465 & 0.751 & 1.71 & 0.426 & 0.413 & 0.441 & 1.000 \\
+Cystic fibrosis & 1 & 0.015 & 0.618 & 0.619 & 0.800 & 0.24 & 0.624 & 0.622 & 0.631 & 1.000 \\
+COVID-19 & 4 & 0.958 & 0.180 & 0.186 & 0.239 & 8.17 & 0.086 & 0.085 & 0.088 & 1.000 \\
+\bottomrule
+\end{tabular}
+
+{'WTDong': '14.64', 'WchiDong': '0.146', 'WplugDong': '0.135', 'WbbDong': '0.151', 'QplugDong': '0.149', 'QbbDong': '0.660', 'QsattDong': '0.155', 'WTGur': '1.71', 'WchiGur': '0.426', 'WplugGur': '0.413', 'WbbGur': '0.441', 'QplugGur': '0.466', 'QbbGur': '0.751', 'QsattGur': '0.465', 'WTCovid': '8.17', 'WchiCovid': '0.086', 'WplugCovid': '0.085', 'WbbCovid': '0.088', 'QplugCovid': '0.180', 'QbbCovid': '0.239', 'QsattCovid': '0.186', 'WTCf': '0.24', 'WchiCf': '0.624', 'WplugCf': '0.622', 'WbbCf': '0.631', 'QplugCf': '0.618', 'QbbCf': '0.800', 'QsattCf': '0.619', 'SupconvSpread': '0.010'} largest-budget spread 0.006750000000000034

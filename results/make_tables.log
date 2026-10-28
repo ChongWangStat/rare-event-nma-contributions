@@ -1,0 +1,26 @@
+\begin{tabular}{llrrrrrrrr}
+\toprule
+Rates & Target & True RD & Bias & Exact SD & Emp.\ SD & IV+cc bias & Cov.\ basic & Cov.\ normal & Cov.\ IV+cc \\
+\midrule
+low & A:D & 0.0120 & -0.00010 & 0.0135 & 0.0140 & -0.0007 & 0.946 & 0.942 & 0.951 \\
+low & B:D & 0.0200 & -0.00005 & 0.0169 & 0.0172 & -0.0018 & 0.947 & 0.948 & 0.959 \\
+verylow & A:D & 0.0040 & -0.00001 & 0.0082 & 0.0080 & -0.0022 & 0.956 & 0.947 & 0.994 \\
+verylow & B:D & 0.0055 & -0.00014 & 0.0094 & 0.0092 & -0.0029 & 0.961 & 0.953 & 0.996 \\
+\bottomrule
+\end{tabular}
+
+\begin{tabular}{lrrrrrrr}
+\toprule
+ & & \multicolumn{3}{c}{$Q_{\mathrm{inc}}$} & \multicolumn{3}{c}{$Q_{\mathrm{het}}$} \\
+\cmidrule(lr){3-5}\cmidrule(lr){6-8}
+Rates & $\delta$ & Fixed, binomial & Pearson, $\chi^2$ & Pearson, binomial & Fixed, binomial & Pearson, $\chi^2$ & Pearson, binomial \\
+\midrule
+low & 0.00 & 0.045 & 0.055 & 0.053 & 0.032 & 0.030 & 0.046 \\
+low & 0.03 & 0.076 & 0.097 & 0.075 & 0.044 & 0.043 & 0.049 \\
+low & 0.06 & 0.219 & 0.219 & 0.101 & 0.027 & 0.027 & 0.041 \\
+verylow & 0.00 & 0.013 & 0.024 & 0.034 & 0.011 & 0.009 & 0.033 \\
+verylow & 0.03 & 0.057 & 0.100 & 0.083 & 0.001 & 0.003 & 0.023 \\
+verylow & 0.06 & 0.232 & 0.183 & 0.079 & 0.005 & 0.008 & 0.025 \\
+\bottomrule
+\end{tabular}
+

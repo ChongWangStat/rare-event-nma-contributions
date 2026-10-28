@@ -1,8 +1,8 @@
-# Exact study contributions in network meta-analysis of rare events
+# Exact study contributions in network meta-analysis of rare events and rare diseases
 
-This repository holds the code and data for the paper "What Does Each Trial Contribute? Exact Study Contributions in Network Meta-Analysis of Rare Events". The scripts regenerate every table, figure and number in the paper and its supplement.
+This repository holds the code and data for the paper "What Does Each Trial Contribute? Exact Study Contributions in Network Meta-Analysis of Rare Events and Rare Diseases". The scripts regenerate every table, figure and number in the paper and its supplement.
 
-The method works with binomial arms on the risk-difference scale, using design-fixed (arm-size) weights. The network estimator is then linear in the observed proportions. Each trial's contribution is a fixed coefficient vector times its own arm proportions, the coefficients depend only on the design, and the estimator is exactly unbiased with an exact binomial law. Cochran's Q splits exactly into heterogeneity and inconsistency, and consistency is tested by plug-in binomial calibration and a Berger–Boos unconditional test.
+The method works with binomial arms on the risk-difference scale, using design-fixed (arm-size) weights. The network estimator is then linear in the observed proportions. Each trial's contribution is a fixed coefficient vector times its own arm proportions; the coefficients (and so each trial's weight) depend only on the design, and the estimator is exactly unbiased with an exact binomial law. Confidence intervals include a MOVER-Wilson interval and an e-value interval valid for every risk vector. Cochran's Q splits exactly into heterogeneity and inconsistency, and consistency is tested by plug-in binomial calibration and a Berger–Boos unconditional test.
 
 ## Quick start
 
@@ -13,7 +13,14 @@ bash code/run_all.sh                     # about two hours on two cores; see the
 
 `run_all.sh` writes everything to `results/` (CSV, JSON, LaTeX tables, PDF figures, logs) and the LaTeX macros `results/qinc_macros.tex` and `results/text_macros.tex`. The manuscript reads from these macros every number that combines several results files. All Monte Carlo steps use fixed seeds. With the pinned library versions, the stored results are reproduced exactly. With other versions of numpy and scipy, deterministic outputs agree to floating-point rounding, and a few Monte Carlo p-values move by a handful of draws.
 
-To use the method on your own arm-level data:
+To use the method on your own arm-level data, the one-line report gives every trial's direct weight, throughput, precision share and contribution (with SE) for one comparison, plus the estimate and its intervals:
+
+```
+cd code
+python3 per_trial_report.py my_network.csv Placebo Drug report.csv   # columns: study, treatment, events, n
+```
+
+Or from Python:
 
 ```python
 import pandas as pd
@@ -27,7 +34,10 @@ res.attrs["estimate"], res.attrs["q"]             # risk difference Drug - Place
 
 | Script | What it does | Main outputs |
 |---|---|---|
-| `rdcsp.py` | The method: `Network` (Laplacians, currents, contributions, exact variance), Q decomposition, exact moments, constrained-MLE null, plug-in calibration, Berger–Boos supremum tests, Hoeffding bounds, intervals, routes and identification, planned trials, comparators | library |
+| `per_trial_report.py` | Per-trial report for one comparison of any arm-level binary network (the paper's reporting recommendation) | printed table, optional CSV |
+| `supplementary_checks.py` | Risk-adjusted-weight sensitivity (COPD), exact enumeration of the e-value interval's coverage, exact moments of Q against simulation | `supplementary_checks.json` |
+| `check_constrained_mle.py` | Constrained binomial MLE null fit: SLSQP against an interior-point solution, on the networks and on simulated data | log |
+| `rdcsp.py` | The method: `Network` (Laplacians, currents, contributions, exact variance), Q decomposition, exact moments, constrained-MLE null, plug-in calibration, Berger–Boos supremum tests, Hoeffding bounds, intervals (MOVER-Wilson, nuisance-free e-value mixture, Clopper–Pearson/LP), routes and identification, planned trials, comparators | library |
 | `run_applications.py` | COPD, liver transplant and COVID-19 networks | `dong_targets.tex`, `gur_control_aprotinin_studies.tex`, `fig_dong_contributions.pdf`, `summary.json` |
 | `add_route_outputs.py` | COPD routes, identification, flow figure, p-value vs weight figure, SE(C_k) table | `dong_routes.tex`, `dong_identification.tex`, `fig_dong_flow.pdf`, `fig_dong_pvalue_weight.pdf`, `dong_placebo_tiohh_studies_se.tex` |
 | `extras.py` | Competing methods (shortest-path contributions, leave-one-out importance, Mantel–Haenszel exclusions), continuity-correction table, allocation | `cc_instability.tex`, `extras.json` |
@@ -44,7 +54,7 @@ res.attrs["estimate"], res.attrs["q"]             # risk difference Drug - Place
 | `run_simulations.py`, `make_tables.py` | Synthetic simulation, estimator | `sim_partA.csv`, `sim_partB.csv` |
 | `run_sim_mle.py`, `make_sim_mle_table.py` | Synthetic simulation, consistency tests with the constrained-MLE null | `sim_mle.csv/.tex` |
 | `sim_cf_design.py` | Design-based simulation on the cystic fibrosis network | `sim_cf_design.csv` |
-| `interval_coverage.py` | Coverage and width of the basic bootstrap, normal, MOVER-Wilson and Clopper–Pearson/LP intervals in six designs | `interval_coverage.csv/.tex` |
+| `interval_coverage.py` | Coverage and width of the basic bootstrap, normal, MOVER-Wilson, e-value mixture and Clopper–Pearson/LP intervals in six designs | `interval_coverage.csv/.tex` |
 | `sim_misspec.py`, `make_robustness_tables.py` | COPD design when the risk-difference model holds and when a common odds ratio holds instead: bias and coverage for the projected target, power of the diagnostics | `sim_misspec_*.csv`, `misspec.tex` |
 | `nmosd_allocation.py` | Allocation of 200 or 400 new NMOSD patients across candidate trials (convex program and exact one- and two-trial plans) | `nmosd_allocation.json/.tex` |
 | `make_sim_table.py` | Table 1 and Supplementary Table S(simA) | `sim_main.tex`, `sim_partA_supp.tex` |

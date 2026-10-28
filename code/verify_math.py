@@ -156,5 +156,19 @@ for name, net in [("dong", dong), ("gur", gur), ("covid", cov)]:
         draws[b_] = (qb["Q_net"], qb["Q_het"], qb["Q_inc"])
     out[f"Q_{name}"] = dict(additivity=q["Q_net"] - q["Q_het"] - q["Q_inc"], E0=ex, mc_mean=dict(zip(["net", "het", "inc"], draws.mean(0).tolist())))
 
+# 8. Algebraic identities for every target of every network (rdcsp.verify_identities)
+from rdcsp import verify_identities
+nets = {"COPD": dong, "liver": gur, "COVID-19": cov,
+        "cystic fibrosis": Network(pd.read_csv("../data/cf_sae_registry.csv")[["study", "treatment", "events", "n"]]),
+        "NMOSD": Network(pd.read_csv("../data/nmosd2025_relapse.csv").query("study != 'CHAMPION'")[["study", "treatment", "events", "n"]]),
+        "SMA safety": Network(pd.read_csv("../data/sma_nusinersen_pneumonia.csv")[["study", "treatment", "events", "n"]])}
+worst, n_targets = {}, 0
+for name, net_ in nets.items():
+    for a_, b_ in combinations(net_.trts, 2):
+        n_targets += 1
+        for key, val in verify_identities(net_, a_, b_).items():
+            worst[key] = max(worst.get(key, 0.0), abs(float(val)))
+out["identities_all_targets"] = dict(n_targets=n_targets, max_abs=worst)
+
 json.dump(out, open("../results/verify_math.json", "w"), indent=1, default=float)
 print(json.dumps(out, indent=1, default=float))

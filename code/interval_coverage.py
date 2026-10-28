@@ -1,7 +1,8 @@
-"""Coverage of 95% intervals for the design-fixed estimator across designs (Section 3.9, Table 1).
+"""Coverage of 95% intervals for the design-fixed estimator across designs (Section 3.9).
 
 Intervals: basic parametric bootstrap (1,000 draws), normal with the exact plug-in variance, MOVER-Wilson
-(rdcsp.mover_interval), and the guaranteed Clopper-Pearson/LP interval.  Designs and true risks:
+(rdcsp.mover_interval), and the two guaranteed intervals: Clopper-Pearson/LP and the nuisance-free e-value
+mixture (rdcsp.emixture_interval).  Designs and true risks:
   synthetic ten-study network, risks 1-4% and 0.2-1.2% (run_simulations geometry and baselines), target A:D;
   cystic fibrosis network, constrained-MLE risks, TEZ/IVA vs triple;
   NMOSD star, constrained-MLE risks with zero arms at half an event, control vs rituximab (19 vs 19) and
@@ -17,7 +18,7 @@ import pandas as pd
 from scipy.optimize import linprog
 from scipy.stats import beta as _beta
 
-from rdcsp import Network, constrained_null_mle, mover_interval
+from rdcsp import Network, constrained_null_mle, mover_interval, emixture_interval
 from run_simulations import make_design, true_probs
 
 reps = int(sys.argv[1]) if len(sys.argv) > 1 else 2000
@@ -55,8 +56,8 @@ def run(label, net, p_true, a, b, seed, with_lp=True):
     if a in tr:
         g[X.shape[1] - len(tr) + tr.index(a)] -= 1
     rng = np.random.default_rng(seed)
-    hit = dict(basic=0, normal=0, mover=0, lp=0)
-    width = dict(basic=0.0, normal=0.0, mover=0.0, lp=0.0)
+    hit = dict(basic=0, normal=0, mover=0, emix=0, lp=0)
+    width = dict(basic=0.0, normal=0.0, mover=0.0, emix=0.0, lp=0.0)
     n_lp = 0
     for i in range(reps):
         r = rng.binomial(nint, p_true)
@@ -68,6 +69,7 @@ def run(label, net, p_true, a, b, seed, with_lp=True):
         v = float(np.sum(c ** 2 * y * (1 - y) / np.maximum(net.n - 1, 1)))
         ints["normal"] = (th - Z * np.sqrt(v), th + Z * np.sqrt(v))
         ints["mover"] = mover_interval(c, r, net.n)
+        ints["emix"] = emixture_interval(c, r, net.n)
         if with_lp and i < 500:
             ints["lp"] = lp_interval(net, X, g, r, net.n)
             n_lp += 1
@@ -76,7 +78,7 @@ def run(label, net, p_true, a, b, seed, with_lp=True):
                 hit[k] += lo <= theta <= hi
                 width[k] += hi - lo
     out = dict(design=label, target=f"{a} vs {b}", theta=theta, reps=reps)
-    for k in ["basic", "normal", "mover"]:
+    for k in ["basic", "normal", "mover", "emix"]:
         out[f"cov_{k}"] = hit[k] / reps
         out[f"width_{k}"] = width[k] / reps
     out["cov_lp"] = hit["lp"] / n_lp if n_lp else np.nan
@@ -106,14 +108,15 @@ for f, drop, tg, lab, seed in [("cf_sae_registry.csv", None, [("TEZ/IVA", "Tripl
         rows.append(run(lab, net, p, a, b, seed + j, with_lp=(lab != "COPD")))
 D = pd.DataFrame(rows)
 D.to_csv("../results/interval_coverage.csv", index=False)
-L = [r"\begin{tabular}{llrrrrrrrr}", r"\toprule",
-     r" & & \multicolumn{2}{c}{Basic bootstrap} & \multicolumn{2}{c}{Normal, exact variance} & \multicolumn{2}{c}{MOVER-Wilson} & \multicolumn{2}{c}{Clopper--Pearson/LP} \\",
-     r"\cmidrule(lr){3-4}\cmidrule(lr){5-6}\cmidrule(lr){7-8}\cmidrule(lr){9-10}",
-     r"Design & Comparison & Cov. & Width & Cov. & Width & Cov. & Width & Cov. & Width \\", r"\midrule"]
+L = [r"\begin{tabular}{llrrrrrrrrrr}", r"\toprule",
+     r" & & \multicolumn{2}{c}{Basic bootstrap} & \multicolumn{2}{c}{Normal, exact variance} & \multicolumn{2}{c}{MOVER-Wilson} & \multicolumn{2}{c}{E-value mixture} & \multicolumn{2}{c}{Clopper--Pearson/LP} \\",
+     r"\cmidrule(lr){3-4}\cmidrule(lr){5-6}\cmidrule(lr){7-8}\cmidrule(lr){9-10}\cmidrule(lr){11-12}",
+     r"Design & Comparison & Cov. & Width & Cov. & Width & Cov. & Width & Cov. & Width & Cov. & Width \\", r"\midrule"]
 for _, r in D.iterrows():
     lp = (f"{r['cov_lp']:.3f} & {r['width_lp']:.3f}") if np.isfinite(r["cov_lp"]) else "-- & --"
     L.append(f"{r['design'].replace('%', chr(92) + '%')} & {r['target']} & {r['cov_basic']:.3f} & {r['width_basic']:.3f} & "
-             f"{r['cov_normal']:.3f} & {r['width_normal']:.3f} & {r['cov_mover']:.3f} & {r['width_mover']:.3f} & {lp} \\\\")
+             f"{r['cov_normal']:.3f} & {r['width_normal']:.3f} & {r['cov_mover']:.3f} & {r['width_mover']:.3f} & "
+             f"{r['cov_emix']:.3f} & {r['width_emix']:.3f} & {lp} \\\\")
 L += [r"\bottomrule", r"\end{tabular}"]
 open("../results/interval_coverage.tex", "w").write("\n".join(L) + "\n")
 print(round(time.time() - t0), "s")

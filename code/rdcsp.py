@@ -518,6 +518,21 @@ def clopper_pearson_box(net: Network, level: float):
     return lo, hi
 
 
+def _lp_null_point(Xc, lo, hi):
+    """A point of the null model space inside the box [lo, hi] (a linear-programming feasibility problem,
+    maximizing the smallest slack), or None if the intersection C_gamma is empty."""
+    from scipy.optimize import linprog
+    m, k = Xc.shape
+    A = np.vstack([np.hstack([-Xc, np.ones((m, 1))]), np.hstack([Xc, np.ones((m, 1))])])
+    b = np.r_[-lo, hi]
+    c = np.zeros(k + 1)
+    c[-1] = -1.0
+    res = linprog(c, A_ub=A, b_ub=b, bounds=[(None, None)] * k + [(0, None)], method="highs")
+    if res.status != 0:
+        return None
+    return Xc @ res.x[:k]
+
+
 def berger_boos_sup_p(net: Network, q_obs=None, gamma: float = 0.001, B: int = 2000, seed: int = 11,
                       n_starts: int = 6, n_iter: int = 60, step: float = 0.5, verbose=False):
     """Exact unconditional test of consistency: p = sup_{p in C_gamma} P_p(Q_inc >= q_obs) + gamma,
@@ -526,7 +541,8 @@ def berger_boos_sup_p(net: Network, q_obs=None, gamma: float = 0.001, B: int = 2
     parameters are kept in C_gamma by alternating projections between the model space and the
     box; the supremum is approximated by a stochastic search with common random numbers and
     is reported as the best value found.  If C_gamma is empty (no null parameter is compatible
-    with the per-arm intervals) the function returns p = gamma and flags it."""
+    with the per-arm intervals, decided by a linear-programming feasibility check when the alternating
+    projections do not converge) the function returns p = gamma and flags it."""
     rng = np.random.default_rng(seed)
     P, Bmat, sw = inconsistency_projector(net)
     if q_obs is None:
@@ -559,6 +575,10 @@ def berger_boos_sup_p(net: Network, q_obs=None, gamma: float = 0.001, B: int = 2
 
     p_fit = Xc @ (pinv @ (sw * net.phat))
     p0, beta0, feasible = project(p_fit)
+    if not feasible:                                   # decide emptiness exactly, not by non-convergence
+        p_lp = _lp_null_point(Xc, lo, hi)
+        if p_lp is not None:
+            p0, beta0, feasible = p_lp, None, True
     if not feasible:
         return dict(q_obs=q_obs, sup_tail=float("nan"), p_value=gamma, gamma=gamma,
                     p_at_fitted_null=float("nan"), feasible=False)
@@ -674,6 +694,10 @@ def berger_boos_sup_wald(net: Network, gamma: float = 0.001, B: int = 2000, seed
 
     p_fit = Xc @ (pinv @ (sw * net.phat))
     p0, feasible = project(p_fit)
+    if not feasible:                                   # decide emptiness exactly, not by non-convergence
+        p_lp = _lp_null_point(Xc, lo, hi)
+        if p_lp is not None:
+            p0, feasible = p_lp, True
     if not feasible:
         return dict(t_obs=t_obs, sup_tail=float("nan"), p_value=gamma, feasible=False)
     best_p, best = p0.copy(), tail(p0)
@@ -733,8 +757,59 @@ def constrained_null_mle(net: Network, design: str = "consistency", y: np.ndarra
     p_start = np.clip(X @ beta0, 0.5 / n, 1 - 0.5 / n)
     b_start = np.linalg.lstsq(X, p_start, rcond=None)[0]
     res = _minimize(nll, b_start, jac=grad, constraints=cons, method="SLSQP", options={"maxiter": 500, "ftol": 1e-12})
+    res.fallback = False
+    # SLSQP status 0 (converged) and 8 (line search stopped on an active bound, the usual termination when a
+    # zero-event arm is fitted at risk zero) are accepted; any other status or an infeasible point is
+    # replaced by the interior-point solution of the same concave problem when that has a higher likelihood.
+    infeasible = (X @ res.x < -1e-8).any() or (X @ res.x > 1 + 1e-8).any()
+    if res.status not in (0, 8) or infeasible:
+        pb = _barrier_mle(X, r, n)
+        if pb is not None and (infeasible or _nll_p(pb, r, n) < _nll_p(np.clip(X @ res.x, 0, 1), r, n)):
+            res.fallback = True
+            return np.clip(pb, 0.0, 1.0), res
     p = np.clip(X @ res.x, 0.0, 1.0)
     return p, res
+
+
+def _nll_p(p, r, n):
+    p = np.clip(p, 1e-300, 1 - 1e-16)
+    return float(-np.sum(r * np.log(p) + (n - r) * np.log1p(-p)))
+
+
+def _barrier_mle(X, r, n, mu_min=1e-12):
+    """Interior-point (logarithmic barrier, damped Newton) maximizer of the binomial likelihood over
+    0 <= X beta <= 1; returns the fitted risks, or None if no strictly feasible start is found."""
+    phat = r / n
+    pt = np.clip(phat, 0.002, 0.998)
+    b = np.linalg.lstsq(X, pt, rcond=None)[0]
+    for _ in range(50):
+        if ((X @ b > 0) & (X @ b < 1)).all():
+            break
+        pt = 0.5 * pt + 0.5 * phat.mean()
+        b = np.linalg.lstsq(X, pt, rcond=None)[0]
+    else:
+        return None
+
+    def fbar(b, mu):
+        p = X @ b
+        if (p <= 0).any() or (p >= 1).any():
+            return np.inf
+        return _nll_p(p, r, n) - mu * np.sum(np.log(p) + np.log1p(-p))
+    mu = 1.0
+    while mu > mu_min:
+        for _ in range(100):
+            p = X @ b
+            g = -X.T @ (r / p - (n - r) / (1 - p)) - mu * X.T @ (1 / p - 1 / (1 - p))
+            h = r / p ** 2 + (n - r) / (1 - p) ** 2 + mu * (1 / p ** 2 + 1 / (1 - p) ** 2)
+            step = np.linalg.lstsq(X.T @ (h[:, None] * X), -g, rcond=None)[0]
+            t, f0 = 1.0, fbar(b, mu)
+            while fbar(b + t * step, mu) > f0 + 1e-4 * t * (g @ step) and t > 1e-12:
+                t *= 0.5
+            b = b + t * step
+            if abs(g @ step) < 1e-12:
+                break
+        mu *= 0.3
+    return X @ b
 
 
 def binomial_calibration_mle(net: Network, B: int = 4000, seed: int = 1) -> dict:
@@ -906,3 +981,65 @@ def mover_interval(c, r, n, level: float = 0.95):
     dl = np.sqrt(np.sum((c[pos] * (p[pos] - lo[pos])) ** 2) + np.sum((c[neg] * (hi[neg] - p[neg])) ** 2))
     du = np.sqrt(np.sum((c[pos] * (hi[pos] - p[pos])) ** 2) + np.sum((c[neg] * (p[neg] - lo[neg])) ** 2))
     return th - dl, th + du
+
+
+# --------------------------------------------------------------------------- #
+# Nuisance-free e-value interval for a fixed linear combination of binomial risks
+# --------------------------------------------------------------------------- #
+EMIX_GRID = np.array([0.01, 0.02, 0.04, 0.08, 0.16, 0.32, 0.64, 0.90])
+
+
+def emixture_interval(c, r, n, alpha: float = 0.05, tol: float = 1e-12):
+    """Finite-sample (1-alpha) interval for psi = sum_i c_i p_i from independent Binomial(n_i, p_i) arms,
+    valid for every risk vector (no mean model, no nuisance search).
+
+    For fixed lambda with 1 + lambda a_i > 0 (a_i = c_i/n_i), E_lambda(psi0) = exp(-lambda psi0) prod_i
+    (1 + lambda a_i)^R_i has expectation prod_i (1 + lambda a_i p_i)^n_i exp(-lambda psi) <= 1 at the true psi,
+    because log(1+x) <= x; E^H_lambda(psi0) = exp{lambda (psihat - psi0) - lambda^2 V/8}, V = sum c_i^2/n_i, is
+    an e-value by Hoeffding's lemma.  For each tail, half the mass is spread over the event-product e-values
+    with lambda = +-g/b (g in EMIX_GRID, b = max|a_i|) and half is put on one Hoeffding e-value with
+    lambda_H = +-sqrt(8 log(4/alpha)/V).  The interval keeps psi0 where both one-sided mixtures are <= 2/alpha
+    (Markov's inequality and a union bound).  All tuning depends only on (c, n, alpha).
+    The interval lies inside psihat -+ sqrt(V log(4/alpha)/2) (Hoeffding at alpha/2) and, with all counts
+    zero, inside +-(b/0.9) log(32/alpha).
+    """
+    from scipy.special import logsumexp
+    c, r, n = np.asarray(c, float), np.asarray(r, float), np.asarray(n, float)
+    keep = c != 0
+    c, r, n = c[keep], r[keep], n[keep]
+    if c.size == 0:
+        return 0.0, 0.0
+    a = c / n
+    psihat = float(c @ (r / n))
+    V = float(np.sum(c ** 2 / n))
+    b = float(np.max(np.abs(a)))
+    J = len(EMIX_GRID)
+    thr = np.log(2.0 / alpha)
+    lo_sup, hi_sup = float(np.minimum(c, 0).sum()), float(np.maximum(c, 0).sum())
+
+    def log_mix(psi0, s):
+        lam = s * EMIX_GRID / b
+        A = np.log1p(np.outer(lam, a)) @ r
+        lh = s * np.sqrt(8 * np.log(4 / alpha) / V)
+        terms = np.r_[A - lam * psi0 + np.log(0.5 / J), lh * (psihat - psi0) - lh * lh * V / 8 + np.log(0.5)]
+        return float(logsumexp(terms))
+
+    def bisect(f, left, right):          # f(left) > thr >= f(right) for the lower end, mirrored for the upper
+        for _ in range(200):
+            mid = 0.5 * (left + right)
+            if f(mid) > thr:
+                left = mid
+            else:
+                right = mid
+            if abs(right - left) < tol:
+                break
+        return left, right
+
+    lo = lo_sup
+    if log_mix(lo_sup, +1) > thr:        # positive-lambda mixture decreases in psi0
+        lo = bisect(lambda x: log_mix(x, +1), lo_sup, psihat)[0]
+    hi = hi_sup
+    if log_mix(hi_sup, -1) > thr:        # negative-lambda mixture increases in psi0
+        l2, r2 = bisect(lambda x: log_mix(-x, -1), -hi_sup, -psihat)
+        hi = -l2
+    return float(lo), float(hi)

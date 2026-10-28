@@ -1,14 +1,14 @@
-\begin{tabular}{llrrrrrrrr}
+\begin{tabular}{llrrrrrrrrrr}
 \toprule
- & & \multicolumn{2}{c}{Basic bootstrap} & \multicolumn{2}{c}{Normal, exact variance} & \multicolumn{2}{c}{MOVER-Wilson} & \multicolumn{2}{c}{Clopper--Pearson/LP} \\
-\cmidrule(lr){3-4}\cmidrule(lr){5-6}\cmidrule(lr){7-8}\cmidrule(lr){9-10}
-Design & Comparison & Cov. & Width & Cov. & Width & Cov. & Width & Cov. & Width \\
+ & & \multicolumn{2}{c}{Basic bootstrap} & \multicolumn{2}{c}{Normal, exact variance} & \multicolumn{2}{c}{MOVER-Wilson} & \multicolumn{2}{c}{E-value mixture} & \multicolumn{2}{c}{Clopper--Pearson/LP} \\
+\cmidrule(lr){3-4}\cmidrule(lr){5-6}\cmidrule(lr){7-8}\cmidrule(lr){9-10}\cmidrule(lr){11-12}
+Design & Comparison & Cov. & Width & Cov. & Width & Cov. & Width & Cov. & Width & Cov. & Width \\
 \midrule
-Synthetic, risks 1-4\% & A vs D & 0.943 & 0.060 & 0.945 & 0.060 & 0.970 & 0.071 & 1.000 & 0.202 \\
-Synthetic, risks 0.2-1.2\% & A vs D & 0.967 & 0.029 & 0.956 & 0.029 & 0.998 & 0.052 & 1.000 & 0.122 \\
-Cystic fibrosis & TEZ/IVA vs Triple & 0.945 & 0.136 & 0.949 & 0.136 & 0.958 & 0.142 & 1.000 & 0.323 \\
-NMOSD star & Control vs Rituximab & 0.921 & 0.434 & 0.924 & 0.455 & 0.959 & 0.470 & 1.000 & 0.907 \\
-NMOSD star & Eculizumab vs Rituximab & 0.927 & 0.525 & 0.939 & 0.541 & 0.961 & 0.548 & 1.000 & 1.434 \\
-COPD & Placebo vs TIO-HH & 0.949 & 0.014 & 0.951 & 0.014 & 0.955 & 0.014 & -- & -- \\
+Synthetic, risks 1-4\% & A vs D & 0.943 & 0.060 & 0.945 & 0.060 & 0.970 & 0.071 & 1.000 & 0.123 & 1.000 & 0.202 \\
+Synthetic, risks 0.2-1.2\% & A vs D & 0.967 & 0.029 & 0.956 & 0.029 & 0.998 & 0.052 & 1.000 & 0.079 & 1.000 & 0.122 \\
+Cystic fibrosis & TEZ/IVA vs Triple & 0.945 & 0.136 & 0.949 & 0.136 & 0.958 & 0.142 & 1.000 & 0.270 & 1.000 & 0.323 \\
+NMOSD star & Control vs Rituximab & 0.921 & 0.434 & 0.924 & 0.455 & 0.959 & 0.470 & 1.000 & 0.917 & 1.000 & 0.907 \\
+NMOSD star & Eculizumab vs Rituximab & 0.927 & 0.525 & 0.939 & 0.541 & 0.961 & 0.548 & 1.000 & 1.060 & 1.000 & 1.434 \\
+COPD & Placebo vs TIO-HH & 0.949 & 0.014 & 0.951 & 0.014 & 0.955 & 0.014 & 1.000 & 0.027 & -- & -- \\
 \bottomrule
 \end{tabular}

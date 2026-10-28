@@ -62,7 +62,7 @@ def nmosd():
         res = net.contributions(a, b)
         ci = binomial_interval(net, a, b, B=20000, seed=3)
         sub = res[res.W > 1e-9][['study', 'd', 'W', 'C']].round(4)
-        res_out[f'{a}:{b}'] = dict(est=round(res.attrs['estimate'], 4), se=round(ci['exact_se'], 4),
+        res_out[f'{a}:{b}'] = dict(est=float(res.attrs['estimate']), se=float(ci['exact_se']),   # full precision; rounded once when printed
                                    pct=[round(x, 4) for x in ci['percentile']],
                                    direct_mass=round(1 - res.attrs['q'], 3), rows=sub.to_dict('records'))
         print(a, b, 'RD', round(res.attrs['estimate'], 4), 'SE', round(ci['exact_se'], 4),

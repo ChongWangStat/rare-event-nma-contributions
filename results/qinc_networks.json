@@ -21,7 +21,7 @@
   "wald_chi2_p": 0.42631103665420633,
   "wald_plugin_p": 0.41305,
   "null_generator": "constrained MLE",
-  "time_s": 35.23323631286621
+  "time_s": 12.451092720031738
  },
  "covid": {
   "Q_inc": 0.9581591911300915,
@@ -47,7 +47,7 @@
   "wald_chi2_p": 0.08557882339430008,
   "wald_plugin_p": 0.08465,
   "null_generator": "constrained MLE",
-  "time_s": 112.35196900367737
+  "time_s": 37.71965217590332
  },
  "cf": {
   "Q_inc": 0.01503665141418008,
@@ -70,17 +70,17 @@
   "wald_chi2_p": 0.623507224619863,
   "wald_plugin_p": 0.6218,
   "null_generator": "constrained MLE",
-  "time_s": 165.32412099838257
+  "time_s": 54.0188102722168
  },
  "dong": {
   "Q_inc": 0.3617041934561672,
   "df_inc": 10,
-  "plugin_p": 0.1475,
-  "exact_mean": 0.23408890774688465,
-  "exact_var": 0.017365337037445933,
-  "satterthwaite_p": 0.15503953929702116,
-  "satt_c": 0.0370913282576864,
-  "satt_nu": 6.311149229291206,
+  "plugin_p": 0.1491,
+  "exact_mean": 0.23408904484928822,
+  "exact_var": 0.017365350863958403,
+  "satterthwaite_p": 0.15503979596521214,
+  "satt_c": 0.037091336066449855,
+  "satt_nu": 6.311151596963591,
   "hoeffding_p": 1.0,
   "hoeffding_components": [
    1.9796967775763388,
@@ -100,8 +100,8 @@
   "bb_tail_at_fitted": 0.161,
   "wald_T": 14.64381069862915,
   "wald_chi2_p": 0.14559752447841057,
-  "wald_plugin_p": 0.1317,
+  "wald_plugin_p": 0.1349,
   "null_generator": "constrained MLE",
-  "time_s": 219.30386924743652
+  "time_s": 68.3513536453247
  }
 }

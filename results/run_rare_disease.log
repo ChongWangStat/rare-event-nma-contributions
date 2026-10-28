@@ -131,4 +131,4 @@ Q_het 0.7548 E0 0.5285 p 0.2294 | Q_inc 0.015 E0 0.0618 p 0.6184 | T_W 0.241 df 
 13          Placebo:Triple   0.820       1    True  1.00
 14          TEZ/IVA:Triple   0.322       1    True  1.00
 
-wrote to /home/claude/pkg/results
+wrote to /tmp/claude-0/-home-claude/c6fa4e9c-3450-5713-bd50-60fdcb96c8df/scratchpad/cleanrun/results

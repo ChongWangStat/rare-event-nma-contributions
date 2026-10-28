@@ -1,0 +1,15 @@
+\begin{tabular}{llrrrrrrr}
+\toprule
+Truth & Comparison & $\theta^*$ & RD at mean placebo risk & Trial RDs & Bias (MC SE) & Cov.\ MOVER & Cov.\ basic & Cov.\ normal \\
+\midrule
+Additive (model holds) & Placebo vs TIO-HH & -0.0026 & -- & -0.0026 to -0.0026 & -0.00009 (0.00008) & 0.956 & 0.948 & 0.952 \\
+ & Placebo vs TIO-SMI & 0.0090 & -- & 0.0090 to 0.0090 & +0.00001 (0.00008) & 0.958 & 0.956 & 0.956 \\
+Common odds ratio & Placebo vs TIO-HH & -0.0073 & -0.0061 & -0.0138 to -0.0003 & +0.00009 (0.00008) & 0.953 & 0.946 & 0.946 \\
+ & Placebo vs TIO-SMI & 0.0078 & 0.0218 & 0.0077 to 0.0078 & +0.00005 (0.00009) & 0.957 & 0.955 & 0.954 \\
+\midrule
+Truth & \multicolumn{8}{l}{Rejection rate at level 0.05: $Q_{\mathrm{het}}$ plug-in / $Q_{\mathrm{inc}}$ plug-in / $T_W$ $\chi^2$} \\
+\midrule
+Additive (model holds) & \multicolumn{8}{l}{0.051 / 0.046 / 0.042  (2000 data sets)} \\
+Common odds ratio & \multicolumn{8}{l}{0.380 / 0.120 / 0.174  (2000 data sets)} \\
+\bottomrule
+\end{tabular}

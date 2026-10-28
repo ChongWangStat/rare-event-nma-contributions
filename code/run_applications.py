@@ -17,6 +17,7 @@ summary = {}
 
 
 def fmt(x, d=4):
+    x = 0.0 if abs(x) < 0.5 * 10 ** (-d) else x          # no "-0.0000"
     return f"{x:.{d}f}"
 
 
@@ -61,7 +62,7 @@ res = dong.contributions("Placebo", "TIO-HH")
 res.to_csv(f"{OUT}/dong_placebo_tiohh_studies.csv", index=False)
 top = res.sort_values("W", ascending=False)
 with open(f"{OUT}/dong_placebo_tiohh_studies.tex", "w") as f:
-    f.write("\\begin{tabular}{llrrrrr}\n\\toprule\nStudy & Arms & $d_k$ & $W^I_k$ & Study RD & $C^D_k$ & $C_k$ \\\\\n\\midrule\n")
+    f.write("\\begin{tabular}{llrrrrr}\n\\toprule\nStudy & Arms & $d_k$ & $\\tau_k-d_k$ & Study RD & $C^D_k$ & $C_k$ \\\\\n\\midrule\n")
     for _, r in top.head(12).iterrows():
         de = "--" if np.isnan(r["direct_est"]) else fmt(r["direct_est"])
         f.write(f"{r['study']} & {r['arms']} & {fmt(r['d'],3)} & {fmt(r['WI'],3)} & {de} & {fmt(r['C_D'],5)} & {fmt(r['C'],5)} \\\\\n")
@@ -202,7 +203,7 @@ for k in gur.studies:
                        d=float(res_g.loc[res_g["study"] == k, "d"].iloc[0])))
 summary["gur"]["zero_event_studies_detail"] = zs
 with open(f"{OUT}/gur_control_aprotinin_studies.tex", "w") as f:
-    f.write("\\begin{tabular}{llrrrrr}\n\\toprule\nStudy & Arms & $d_k$ & $W^I_k$ & Study RD & $C^D_k$ & $C_k$ \\\\\n\\midrule\n")
+    f.write("\\begin{tabular}{llrrrrr}\n\\toprule\nStudy & Arms & $d_k$ & $\\tau_k-d_k$ & Study RD & $C^D_k$ & $C_k$ \\\\\n\\midrule\n")
     for _, r in res_g.sort_values("W", ascending=False).iterrows():
         de = "--" if np.isnan(r["direct_est"]) else fmt(r["direct_est"])
         f.write(f"{r['study']} & {r['arms'].replace('Control/Placebo','Control')} & {fmt(r['d'],3)} & {fmt(r['WI'],3)} & {de} & {fmt(r['C_D'],5)} & {fmt(r['C'],5)} \\\\\n")

@@ -53,7 +53,7 @@ $PY run_qinc.py low 0.06     | tee -a "$R/run_qinc_cells.log"
 $PY run_qinc.py verylow 0.0  | tee -a "$R/run_qinc_cells.log"
 $PY run_qinc.py verylow 0.06 | tee -a "$R/run_qinc_cells.log"
 
-# LONG: Berger-Boos supremum convergence (Supplementary Table S4); independent, can run in parallel.
+# LONG: Berger-Boos supremum convergence (supplementary table supconv); independent, can run in parallel.
 # Measured with all four running in parallel on 2 cores: gurusamy ~5 min, cf ~8 min, covid ~9 min,
 # dong ~30 min
 $PY sup_convergence.py gurusamy > "$R/supconv_gurusamy.log"
@@ -63,7 +63,7 @@ $PY sup_convergence.py cf       > "$R/supconv_cf.log"
 $PY sup_convergence.py table    | tee "$R/supconv_table.log"      # supconv.tex, supconv_summary.json
 $PY make_qinc_tables.py      | tee "$R/make_qinc_tables.log"      # qinc_networks.tex, qinc_macros.tex (needs supconv_summary.json)
 
-# --- Consistency-test simulation with the constrained-MLE null generator (Table S3) ---------
+# --- Consistency-test simulation with the constrained-MLE null generator (sim_mle.tex) ------
 # LONG-ish: ~0.5-1 min per cell (time_s column of sim_mle.csv: 44, 34, 26, 23 s)
 # LONG-ish: ~5 min per cell with the supremum test on 400 / 200 data sets
 $PY run_sim_mle.py low 0.0 1000 400      | tee -a "$R/run_sim_mle.log"
@@ -72,7 +72,7 @@ $PY run_sim_mle.py low 0.06 1000 200     | tee -a "$R/run_sim_mle.log"
 $PY run_sim_mle.py verylow 0.06 1000 200 | tee -a "$R/run_sim_mle.log"
 $PY make_sim_mle_table.py            | tee "$R/make_sim_mle_table.log"   # sim_mle.tex
 
-# --- Design-based simulation on the cystic fibrosis network (Table 1) ----------------------
+# --- Design-based simulation on the cystic fibrosis network (sim_main.tex) -----------------
 # ~4-8 min per cell
 $PY sim_cf_design.py 0.0 1000 400   | tee -a "$R/sim_cf_design.log"
 $PY sim_cf_design.py 0.05 1000 200  | tee -a "$R/sim_cf_design.log"
@@ -80,12 +80,16 @@ $PY make_sim_table.py               | tee "$R/make_sim_table.log"      # sim_mai
 
 # --- Robustness: interval coverage, misspecification, NMOSD allocation ----------------------
 $PY nmosd_allocation.py             | tee "$R/nmosd_allocation.log"    # ~1 min; nmosd_allocation.json/.tex
-# ~2 min (4,000 data sets per design)
+# ~7 min (4,000 data sets per design; the e-value interval is computed by bisection)
 $PY interval_coverage.py 4000       | tee "$R/interval_coverage.log"   # interval_coverage.csv/.tex
 # LONG: ~6-7 min each; the two truths are independent and can run in parallel
 $PY sim_misspec.py additive 2000    | tee "$R/sim_misspec_additive.log"  # sim_misspec_additive.csv
 $PY sim_misspec.py logit 2000       | tee "$R/sim_misspec_logit.log"     # sim_misspec_logit.csv
 $PY make_robustness_tables.py       | tee "$R/make_robustness_tables.log" # misspec.tex
+
+# --- Checks quoted in the supplement ----------------------------------------------------------
+$PY check_constrained_mle.py        | tee "$R/check_constrained_mle.log"   # SLSQP vs interior point
+$PY supplementary_checks.py         | tee "$R/supplementary_checks.log"    # ~30 s; supplementary_checks.json
 
 # --- Tables and macros read by the manuscript and supplement --------------------------------
 $PY make_text_macros.py             | tee "$R/make_text_macros.log"    # text_macros.tex

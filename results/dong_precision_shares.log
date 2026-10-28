@@ -11,4 +11,4 @@ sum eta 1.0 r_ab 0.00023099212114146574
 max |eta-d| two-arm direct: 6.938893903907228e-18
 Placebo TIO-HH SE plug-in n 0.00358 SE unbiased n-1 0.00358
 Control/Placebo Aprotinin SE plug-in n 0.0227 SE unbiased n-1 0.023
-wrote /home/claude/pkg/results/dong_precision_shares.tex
+wrote /tmp/claude-0/-home-claude/c6fa4e9c-3450-5713-bd50-60fdcb96c8df/scratchpad/cleanrun/results/dong_precision_shares.tex

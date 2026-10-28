@@ -12,7 +12,8 @@ R = json.load(open(f"{OUT}/revision_analyses.json"))
 # --- MLE comparison
 L = [r"\begin{tabular}{lrrr}", r"\toprule", r"Comparison & Design-fixed & Binomial MLE & Difference \\", r"\midrule"]
 for r in R["mle_comparison"]["rows"]:
-    L.append(f"{r['target'].replace(':', ' vs ')} & {r['design_fixed']:+.5f} & {r['mle']:+.5f} & {r['diff']:+.5f} \\\\")
+    z = lambda x: "0" if abs(x) < 5e-6 else f"{x:+.5f}"      # the MLE is exactly zero for three comparisons
+    L.append(f"{r['target'].replace(':', ' vs ')} & {z(r['design_fixed'])} & {z(r['mle'])} & {z(r['diff'])} \\\\")
 L += [r"\bottomrule", r"\end{tabular}"]
 open(f"{OUT}/supp_mle.tex", "w").write("\n".join(L) + "\n")
 
