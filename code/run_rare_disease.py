@@ -127,7 +127,7 @@ def sma_safety():
     Xw = sw[:, None] * Xd
     Hd = Xw @ np.linalg.pinv(Xw.T @ Xw) @ Xw.T
     Ad = np.eye(len(sw)) - Hd
-    # E Q_het = E0(p_bar) + sigma^2 sum_i A_ii w_i (1 - 1/n_i)   (Proposition 2; E{p(1-p)} = p_bar(1-p_bar) - sigma^2)
+    # E Q_het = E0(p_bar) + sigma^2 sum_i A_ii w_i (1 - 1/n_i)   (Proposition 3; E{p(1-p)} = p_bar(1-p_bar) - sigma^2)
     tr = float(np.sum(np.diag(Ad) * net.w * (1 - 1 / net.n)))
     s2 = max(q['Q_het'] - ex['E_Q_het'], 0) / tr
     print('sigma_delta^2', s2, 'tau', np.sqrt(2 * s2))

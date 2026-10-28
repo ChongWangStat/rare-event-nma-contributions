@@ -912,7 +912,7 @@ def bottleneck_paths(edges, a, b, tol=1e-12):
 
 
 def route_identification(edges, a, b, tol=1e-12):
-    """Theorem 3.6 of the identification paper: the study-labelled route allocation
+    """Proposition 2(ii)-(iii) of the paper: the study-labelled route allocation
     is unique iff every support vertex has min(N^-(v), N^+(v)) = 1, where N^- counts
     distinct source-to-v prefixes and N^+ distinct v-to-sink suffixes (capped at 2).
     Also returns the sharp interval [L, U] for each canonical route via the

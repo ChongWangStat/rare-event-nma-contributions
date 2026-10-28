@@ -35,7 +35,7 @@ res.attrs["estimate"], res.attrs["q"]             # risk difference Drug - Place
 | Script | What it does | Main outputs |
 |---|---|---|
 | `per_trial_report.py` | Per-trial report for one comparison of any arm-level binary network (the paper's reporting recommendation) | printed table, optional CSV |
-| `supplementary_checks.py` | Risk-adjusted-weight sensitivity (COPD), exact enumeration of the e-value interval's coverage, exact moments of Q against simulation | `supplementary_checks.json` |
+| `supplementary_checks.py` | Risk-adjusted-weight sensitivity (COPD), exact enumeration of the e-value interval's coverage, exact moments of Q against simulation, brute-force check of Proposition 2 (route identification) by route enumeration and linear programming | `supplementary_checks.json` |
 | `check_constrained_mle.py` | Constrained binomial MLE null fit: SLSQP against an interior-point solution, on the networks and on simulated data | log |
 | `rdcsp.py` | The method: `Network` (Laplacians, currents, contributions, exact variance), Q decomposition, exact moments, constrained-MLE null, plug-in calibration, Berger–Boos supremum tests, Hoeffding bounds, intervals (MOVER-Wilson, nuisance-free e-value mixture, Clopper–Pearson/LP), routes and identification, planned trials, comparators | library |
 | `run_applications.py` | COPD, liver transplant and COVID-19 networks | `dong_targets.tex`, `gur_control_aprotinin_studies.tex`, `fig_dong_contributions.pdf`, `summary.json` |

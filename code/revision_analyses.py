@@ -279,14 +279,14 @@ pt_hh = s[(s.network == "COPD") & (s.target == "Placebo:TIO-HH")]
 q2["COPD_Placebo:TIO-HH_p_range"] = [float(pt_hh.p.min()), float(pt_hh.p.max())]
 R["q2"] = q2
 
-# ---------------------------------------------------------------- 11. moment estimator, COPD (Proposition 2)
+# ---------------------------------------------------------------- 11. moment estimator, COPD (Proposition 3)
 from rdcsp import null_expectation_Q
 qd_dong = q_decomposition(dong)
 e0 = null_expectation_Q(dong, np.clip(constrained_null_mle(dong, "consistency")[0], 0, 1))
 sw_ = np.sqrt(dong.w)
 Xw_ = sw_[:, None] * dong.design_specific()
 Ad_ = np.eye(len(sw_)) - Xw_ @ np.linalg.pinv(Xw_.T @ Xw_) @ Xw_.T
-tr_ = float(np.sum(np.diag(Ad_) * dong.w * (1 - 1 / dong.n)))   # Proposition 2 with E{p(1-p)} = p_bar(1-p_bar) - sigma^2
+tr_ = float(np.sum(np.diag(Ad_) * dong.w * (1 - 1 / dong.n)))   # Proposition 3 with E{p(1-p)} = p_bar(1-p_bar) - sigma^2
 s2_ = max(qd_dong["Q_het"] - e0["E_Q_het"], 0) / tr_
 c_ = dong.coefficient_vector("Placebo", "TIO-HH")
 v_ = float((c_ ** 2 * dong.phat * (1 - dong.phat) / np.maximum(dong.n - 1, 1)).sum())
