@@ -1,6 +1,6 @@
 # Exact study contributions in network meta-analysis of rare events and rare diseases
 
-This repository holds the code and data for the paper "What Does Each Trial Contribute? Exact Study Contributions in Network Meta-Analysis of Rare Events and Rare Diseases". The scripts regenerate every table, figure and number in the paper and its supplement.
+This repository holds the code and data for the paper "Weighed Before the Results: What Each Clinical Trial Contributes to Network Meta-Analysis of Rare Events in Medical Research". The scripts regenerate every table, figure and number in the paper and its supplement.
 
 The method works with binomial arms on the risk-difference scale, using design-fixed (arm-size) weights. The network estimator is then linear in the observed proportions. Each trial's contribution is a fixed coefficient vector times its own arm proportions; the coefficients (and so each trial's weight) depend only on the design, and the estimator is exactly unbiased with an exact binomial law. Confidence intervals include a MOVER-Wilson interval and an e-value interval valid for every risk vector. Cochran's Q splits exactly into heterogeneity and inconsistency, and consistency is tested by plug-in binomial calibration and a Berger–Boos unconditional test.
 
